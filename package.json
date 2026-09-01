@@ -1,6 +1,6 @@
 {
   "name": "@captioncat/caption-engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Design and render expressive, animated captions for video and audio with reusable presets. Create, customize, and manage your own caption styles with Preset Studio.",
   "keywords": [
     "ai",
