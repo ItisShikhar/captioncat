@@ -21,6 +21,9 @@ permissions:
 
 jobs:
   build-and-release:
+    permissions:
+      contents: write
+      id-token: write
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,6 +46,14 @@ jobs:
       - name: Build engine package
         working-directory: .
         run: npm run build
+
+      - name: Lint engine package
+        working-directory: .
+        run: npm run lint
+
+      - name: Test engine package
+        working-directory: .
+        run: npm test
 
       - name: Resolve captioncat release version
         id: release
@@ -81,6 +92,21 @@ jobs:
       - name: Verify the versioned Studio HTML works end-to-end over file://
         run: npm run verify:single-file-build
 
+      - name: Prepare npm package archive
+        working-directory: .
+        run: |
+          rm -rf npm-package
+          rm -rf assets/fonts/downloaded
+          mkdir -p npm-package
+          npm pack --pack-destination npm-package
+
+      - name: Upload npm package archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-package
+          path: npm-package/*.tgz
+          if-no-files-found: error
+
       - name: Resolve versioned Studio release filename
         id: studio
         run: |
@@ -117,6 +143,29 @@ jobs:
             https://itisshikhar.github.io/captioncat/captioncat-preset-studio/
           make_latest: true
           files: tools/preset-studio/dist/${{ steps.studio.outputs.filename }}
+
+  publish-npm:
+    needs: build-and-release
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+
+      - name: Download npm package archive
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-package
+          path: npm-package
+
+      - name: Publish to npm with Trusted Publishing
+        run: npm publish npm-package/*.tgz --provenance --access public
 
   deploy-pages:
     needs: build-and-release

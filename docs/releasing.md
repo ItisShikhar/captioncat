@@ -36,9 +36,9 @@ The command performs these actions:
 7. Creates the matching `v<version>` tag.
 8. Pushes only that tag.
 
-The command does not publish the package to npm. Publish the exact tag after
-the GitHub Actions release checks pass. The command does not force-push or
-overwrite an existing tag.
+The command does not publish the package itself. Pushing the tag starts the
+GitHub Actions workflows that publish the package and create the GitHub
+Release. The command does not force-push or overwrite an existing tag.
 
 The command pushes directly to `main`. The account that runs it must bypass
 the pull request rule for `main`, or the command stops at the branch push.
@@ -69,10 +69,27 @@ engine for Node and browser consumers, generates required browser manifests,
 and copies engine assets. The Studio build bundles the browser engine output
 into the standalone HTML file.
 
-The current workflow does not:
+The GitHub Release contains the versioned Studio asset. It does not attach an
+engine package archive.
 
-- publish `@captioncat/caption-engine` to npm; or
-- attach an engine package archive to the GitHub Release.
+After the release build succeeds, the `publish-npm` job downloads the verified
+engine package archive and publishes it through npm Trusted Publishing. The
+`publish-npm` job runs only for a pushed release tag. It uses OIDC and does
+not store an npm token or 2FA code in GitHub.
+
+The `publish-npm` and `deploy-pages` jobs run in parallel after the release
+build and GitHub Release succeed.
+
+Before the first npm release, configure the npm package's Trusted Publisher:
+
+```text
+Organization/user: ItisShikhar
+Repository: captioncat
+Workflow: preset-studio-release.yml
+```
+
+The npm package must already exist under the `@captioncat` organization, and
+the organization account must have permission to publish it.
 
 The generated `build/` and `build-browser/` directories are required in a
 published engine package because the package entry points and browser export
