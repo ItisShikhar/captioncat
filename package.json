@@ -27,7 +27,11 @@
     "video-rendering",
     "video-subtitles"
   ],
-  "author": "Shikhar Srivastava",
+  "author": {
+    "name": "Shikhar Srivastava",
+    "email": "shikhar.cs.eng@gmail.com",
+    "url": "https://www.linkedin.com/in/itisshikhar/"
+  },
   "license": "MIT",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -36,7 +40,8 @@
     "url": "https://github.com/ItisShikhar/captioncat.git"
   },
   "bugs": {
-    "url": "https://github.com/ItisShikhar/captioncat/issues"
+    "url": "https://github.com/ItisShikhar/captioncat/issues",
+    "email": "shikhar.cs.eng@gmail.com"
   },
   "homepage": "https://github.com/ItisShikhar/captioncat#readme",
   "exports": {

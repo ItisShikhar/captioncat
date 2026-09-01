@@ -3,6 +3,11 @@
   "description": "Create, customize, and manage your own caption styles with Preset Studio.",
   "private": true,
   "version": "1.0.0",
+  "author": {
+    "name": "Shikhar Srivastava",
+    "email": "shikhar.cs.eng@gmail.com",
+    "url": "https://www.linkedin.com/in/itisshikhar/"
+  },
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -11,7 +16,8 @@
     "directory": "tools/preset-studio"
   },
   "bugs": {
-    "url": "https://github.com/ItisShikhar/captioncat/issues"
+    "url": "https://github.com/ItisShikhar/captioncat/issues",
+    "email": "shikhar.cs.eng@gmail.com"
   },
   "homepage": "https://github.com/ItisShikhar/captioncat#readme",
   "engines": {
