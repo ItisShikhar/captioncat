@@ -57,7 +57,7 @@ Open that file in a Chromium browser.
 
 The release workflow publishes a single-file Studio for version tags or manual
 dispatch. The workflow is defined in
-[`.github/workflows/preset-studio-release.yml`](../.github/workflows/preset-studio-release.yml).
+[`.github/workflows/release.yml`](../.github/workflows/release.yml).
 
 The Studio package is private and is not published to npm. Its version is build
 metadata only. The root

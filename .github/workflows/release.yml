@@ -1,4 +1,4 @@
-name: captioncat Preset Studio Release
+name: captioncat Release
 
 # Builds tools/preset-studio into a single self-contained
 # dist/captioncat-preset-studio-v<version>.html and
@@ -156,7 +156,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '24'
-          registry-url: https://registry.npmjs.org
 
       - name: Download npm package archive
         uses: actions/download-artifact@v4
@@ -165,7 +164,17 @@ jobs:
           path: npm-package
 
       - name: Publish to npm with Trusted Publishing
-        run: npm publish npm-package/*.tgz --provenance --access public
+        shell: bash
+        run: |
+          package_archive="$(find ./npm-package -maxdepth 1 -type f -name '*.tgz' -print -quit)"
+          if [[ -z "$package_archive" ]]; then
+            echo "No npm package archive was downloaded."
+            exit 1
+          fi
+          echo "Publishing $package_archive"
+          npm publish "$package_archive" --provenance --access public
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
   deploy-pages:
     needs: build-and-release

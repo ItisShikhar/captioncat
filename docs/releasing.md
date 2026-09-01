@@ -44,7 +44,7 @@ The command pushes directly to `main`. The account that runs it must bypass
 the pull request rule for `main`, or the command stops at the branch push.
 
 The tag push starts the
-[`captioncat Preset Studio Release` workflow](../.github/workflows/preset-studio-release.yml).
+[`captioncat Release` workflow](../.github/workflows/release.yml).
 
 The workflow checks that the tag matches the root package version. It then
 builds and validates the engine, builds the standalone Studio HTML, and creates
@@ -85,7 +85,7 @@ Before the first npm release, configure the npm package's Trusted Publisher:
 ```text
 Organization/user: ItisShikhar
 Repository: captioncat
-Workflow: preset-studio-release.yml
+Workflow: release.yml
 ```
 
 The npm package must already exist under the `@captioncat` organization, and

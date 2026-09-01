@@ -271,7 +271,7 @@ remote-font mode, or about 33 MB when
 `BUNDLE_FONTS_WITH_REMOTE_SOURCES` is enabled for a fully offline bundle -
 it's gitignored
 and intentionally **not** committed to the repo (that would grow the repo's
-history unboundedly on every rebuild). Instead, `.github/workflows/preset-studio-release.yml`:
+history unboundedly on every rebuild). Instead, `.github/workflows/release.yml`:
 
 1. Runs when a `v<version>` tag is pushed and can also be triggered manually
    (`workflow_dispatch`).
