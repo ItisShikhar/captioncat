@@ -1,0 +1,110 @@
+{
+  "name": "@captioncat/caption-engine",
+  "version": "1.0.0",
+  "description": "Reusable caption rendering engine for video, transcript, ASS/SRT, and PNG-sequence workflows.",
+  "author": "Shikhar Srivastava",
+  "license": "MIT",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ItisShikhar/captioncat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ItisShikhar/captioncat/issues"
+  },
+  "homepage": "https://github.com/ItisShikhar/captioncat#readme",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./browser": {
+      "types": "./build-browser/caption-engine/browser.d.ts",
+      "browser": "./build-browser/caption-engine/browser.js",
+      "node": "./build/caption-engine/browser.js",
+      "default": "./build-browser/caption-engine/browser.js"
+    },
+    "./cli": {
+      "types": "./build/caption-engine/cli.d.ts",
+      "default": "./build/caption-engine/cli.js"
+    }
+  },
+  "bin": {
+    "captioncat": "./bin/caption-engine.js",
+    "caption-engine": "./bin/caption-engine.js"
+  },
+  "files": [
+    "build",
+    "build-browser",
+    "bin",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "imports": {
+    "#platform/canvas.js": {
+      "browser": "./build-browser/caption-engine/entity-system/platform/canvas.browser.js",
+      "node": "./build/caption-engine/entity-system/platform/canvas.node.js",
+      "default": "./build/caption-engine/entity-system/platform/canvas.node.js"
+    },
+    "#platform/image-assets.js": {
+      "browser": "./build-browser/caption-engine/entity-system/platform/image-assets.browser.js",
+      "node": "./build/caption-engine/entity-system/platform/image-assets.node.js",
+      "default": "./build/caption-engine/entity-system/platform/image-assets.node.js"
+    },
+    "#platform/cursor-assets.js": {
+      "browser": "./build-browser/caption-engine/entity-system/platform/cursor-assets.browser.js",
+      "node": "./build/caption-engine/entity-system/platform/cursor-assets.node.js",
+      "default": "./build/caption-engine/entity-system/platform/cursor-assets.node.js"
+    },
+    "#platform/font-loader.js": {
+      "browser": "./build-browser/utilities/platform/font-loader.browser.js",
+      "node": "./build/utilities/platform/font-loader.node.js",
+      "default": "./build/utilities/platform/font-loader.node.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf ./build ./build-browser ./src/caption-engine/entity-system/platform/generated",
+    "build": "npm run clean && node scripts/generate-browser-svg-manifests.mjs && tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node scripts/copy-image-assets.mjs",
+    "gen-promo-frames": "npm run build && node scripts/generate-promo-frames.mjs --config scripts/promo-frame-config.json",
+    "gen-preset-thumbs": "npm run build && node scripts/generate-preset-thumbnails.mjs",
+    "lint": "biome lint src",
+    "format": "biome format --write src",
+    "start": "node ./build/index.js",
+    "node_modules_cleanup": "npm prune --omit=dev",
+    "test": "npm run test-sample -- 5o en 9:16 360p all",
+    "test-all": "node scripts/run-test.mjs tests/sample-render.test.js",
+    "test-ecs-engine": "node scripts/run-test.mjs \"tests/*.test.js\"",
+    "test-ecs-animation": "node scripts/run-test.mjs tests/ecs-animation.test.js",
+    "test-cli": "node scripts/run-test.mjs tests/cli.test.js",
+    "test-debug-overlays": "node scripts/run-test.mjs tests/debug-overlay.test.js",
+    "test-sample": "node scripts/run-sample-test.mjs",
+    "test-openai-all": "node scripts/run-test.mjs --test-name-pattern \"with openai\" tests/sample-render.test.js",
+    "test-elevenlabs-all": "node scripts/run-test.mjs --test-name-pattern \"with elevenlabs\" tests/sample-render.test.js",
+    "test-sarvam-all": "node scripts/run-test.mjs --test-name-pattern \"with sarvam\" tests/sample-render.test.js",
+    "test-transcript-to-other-formats": "node scripts/run-test.mjs --test-name-pattern \"transcript.json to ass and srt\" tests/sample-render.test.js",
+    "test-bypass-all": "node scripts/run-test.mjs --test-name-pattern \"bypassing transcription\" tests/sample-render.test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.6",
+    "@types/node": "^22.16.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "skia-canvas": "^3.0.8",
+    "tslib": "^2.8.1",
+    "zod": "^3.24.1"
+  },
+  "resolutions": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}

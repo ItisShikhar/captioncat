@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    // The Node types support the engine package declarations and the Vite
+    // configuration.
+    "types": ["vite/client", "node"],
+    "allowArbitraryExtensions": true,
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+
+    /* Linting */
+    // `noUnusedLocals`/`noUnusedParameters`/`verbatimModuleSyntax`/
+    // `erasableSyntaxOnly` are deliberately off at the project level. The
+    // engine source pulled in by the browser API has pre-existing unused
+    // parameters, non-type-only imports, and parameter-property constructors.
+    // We do not edit that source only for this tool's stricter settings.
+    // oxlint still enforces these settings for our own `src/` code.
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path aliases */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  // Studio consumes the generated browser declarations from the engine package.
+  "include": ["src"]
+}

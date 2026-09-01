@@ -1,0 +1,772 @@
+{
+  "id": "breaking-news",
+  "name": "Breaking News",
+  "schemaVersion": 1,
+  "captionLayout": {
+    "textDirection": "auto",
+    "rowsPerPage": {
+      "mode": "fixed",
+      "count": 3
+    },
+    "wordsPerRow": {
+      "mode": "auto"
+    },
+    "flowParticipation": {
+      "collapseMode": "reserve",
+      "rows": {
+        "default": "include",
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      },
+      "words": {
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      }
+    },
+    "horizontalFit": "natural",
+    "horizontalFitMinScale": 0.5,
+    "horizontalFitMaxScale": 1.25,
+    "breaking": {
+      "smartBreaks": "auto",
+      "rowBreakPauseThresholdSeconds": 0.3,
+      "pageBreakPauseThresholdSeconds": 2.5,
+      "pauseSpacing": {
+        "enabled": false,
+        "thresholdSeconds": 0.8,
+        "extraSpacing": 32,
+        "maxExtraSpacing": 64
+      },
+      "longWordThresholdMode": "automatic",
+      "longWordThresholdSeconds": 0.75,
+      "breakPriorities": {
+        "rows": [
+          {
+            "id": "source",
+            "mode": "always"
+          },
+          {
+            "id": "punctuation",
+            "mode": "prefer"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "word-count",
+            "mode": "required"
+          },
+          {
+            "id": "width",
+            "mode": "required"
+          },
+          {
+            "id": "long-word",
+            "mode": "required"
+          }
+        ],
+        "pages": [
+          {
+            "id": "source",
+            "mode": "off"
+          },
+          {
+            "id": "punctuation",
+            "mode": "off"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "row-count",
+            "mode": "required"
+          },
+          {
+            "id": "height",
+            "mode": "required"
+          }
+        ]
+      },
+      "wordWrapping": {
+        "mode": "wrap",
+        "breakCharacters": [
+          "-"
+        ],
+        "breakMarker": "-",
+        "overflowTolerance": 8
+      },
+      "sentenceEndings": [
+        ".",
+        "!",
+        "?",
+        "।",
+        "॥",
+        "。",
+        "！",
+        "？"
+      ],
+      "strongPunctuation": [
+        ";",
+        ":",
+        "…",
+        "；",
+        "：",
+        "……"
+      ],
+      "additionalCharacters": [],
+      "sourceLineBreaks": "preserve"
+    }
+  },
+  "stateWindow": {
+    "previousWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "previousRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextRows": {
+      "mode": "fixedCount",
+      "count": 1
+    }
+  },
+  "timing": {
+    "captionHoldThresholdSeconds": 1
+  },
+  "metadata": {
+    "badges": [
+      "news format",
+      "educational",
+      "viral",
+      "reels",
+      "tiktok"
+    ],
+    "platform": "Originals",
+    "previewBackgroundId": "image-interior-deco",
+    "previewStoryId": "main-character"
+  },
+  "preview": {
+    "aspectRatio": "9:16",
+    "properties": {
+      "background": {
+        "type": "paint",
+        "value": {
+          "type": "solid",
+          "color": "rgb(255,255,255)"
+        }
+      },
+      "fontScaleMultiplier": {
+        "type": "number",
+        "value": 0.325
+      }
+    }
+  },
+  "design": {
+    "entity": "viewport",
+    "id": "viewport",
+    "components": [
+      {
+        "component": "transform"
+      },
+      {
+        "component": "layout",
+        "props": {
+          "childrenAlignment": {
+            "horizontalAlignment": {
+              "type": "string",
+              "value": "center"
+            },
+            "verticalAlignment": {
+              "type": "string",
+              "value": "bottom"
+            }
+          }
+        }
+      }
+    ],
+    "children": [
+      {
+        "entity": "videoArea",
+        "id": "videoArea",
+        "components": [
+          {
+            "component": "layout",
+            "props": {
+              "layoutMode": {
+                "type": "string",
+                "value": "overlay"
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 0
+                },
+                "right": {
+                  "type": "number",
+                  "value": 0
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 0
+                },
+                "left": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "clipContent": {
+                "type": "boolean",
+                "value": true
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "video",
+            "id": "video"
+          }
+        ]
+      },
+      {
+        "entity": "compositionArea",
+        "id": "compositionArea",
+        "components": [
+          {
+            "component": "transform",
+            "props": {
+              "dimensions": {
+                "type": "vector2",
+                "value": {
+                  "x": 0,
+                  "y": 40
+                }
+              },
+              "heightUnit": {
+                "type": "string",
+                "value": "%"
+              },
+              "widthMode": {
+                "type": "string",
+                "value": "fitParent"
+              }
+            }
+          },
+          {
+            "component": "layout",
+            "props": {
+              "childrenAlignment": {
+                "horizontalAlignment": {
+                  "type": "string",
+                  "value": "center"
+                },
+                "verticalAlignment": {
+                  "type": "string",
+                  "value": "center"
+                }
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 20
+                },
+                "right": {
+                  "type": "number",
+                  "value": 20
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 20
+                },
+                "left": {
+                  "type": "number",
+                  "value": 20
+                }
+              },
+              "clipContent": {
+                "type": "boolean",
+                "value": true
+              }
+            }
+          },
+          {
+            "component": "backgroundStyle",
+            "props": {
+              "effectsInheritBaseAlpha": {
+                "type": "boolean",
+                "value": true
+              },
+              "fill": {
+                "type": "paint",
+                "value": {
+                  "type": "linear-gradient",
+                  "angle": 0,
+                  "stops": [
+                    {
+                      "offset": 0.121,
+                      "color": "#000000"
+                    },
+                    {
+                      "offset": 1,
+                      "color": "#00000000"
+                    }
+                  ]
+                }
+              },
+              "borderRadius": {
+                "type": "number",
+                "value": 0,
+                "squircle": false
+              },
+              "borderRadiusMode": {
+                "type": "string",
+                "value": "uniform"
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "page",
+            "id": "page",
+            "components": [
+              {
+                "component": "transform",
+                "props": {
+                  "position": {
+                    "type": "vector2",
+                    "value": {
+                      "x": 0,
+                      "y": -24
+                    }
+                  },
+                  "heightMode": {
+                    "type": "string",
+                    "value": "fitChildren"
+                  }
+                }
+              },
+              {
+                "component": "layout",
+                "props": {
+                  "childrenAlignment": {
+                    "horizontalAlignment": {
+                      "type": "string",
+                      "value": "center"
+                    },
+                    "verticalAlignment": {
+                      "type": "string",
+                      "value": "bottom"
+                    },
+                    "horizontalSingleItemAlignment": {
+                      "type": "string",
+                      "value": "start"
+                    }
+                  },
+                  "padding": {
+                    "top": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "left": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "linkedTopBottom": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "linkedLeftRight": {
+                      "type": "boolean",
+                      "value": true
+                    }
+                  },
+                  "childWindow": {
+                    "windowMode": {
+                      "type": "string",
+                      "value": "all"
+                    },
+                    "windowCount": {
+                      "type": "number",
+                      "value": 1
+                    },
+                    "windowAxis": {
+                      "type": "string",
+                      "value": "vertical"
+                    },
+                    "windowAnchor": {
+                      "type": "string",
+                      "value": "start"
+                    },
+                    "windowSelection": {
+                      "type": "string",
+                      "value": "anchor"
+                    }
+                  }
+                }
+              },
+              {
+                "component": "verticalSpacer",
+                "props": {
+                  "spacing": {
+                    "type": "number",
+                    "value": 10
+                  }
+                }
+              }
+            ],
+            "children": [
+              {
+                "entity": "row",
+                "id": "row:default",
+                "components": [
+                  {
+                    "component": "transform",
+                    "props": {
+                      "widthMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      },
+                      "heightMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      }
+                    }
+                  },
+                  {
+                    "component": "layout",
+                    "props": {
+                      "childrenAlignment": {
+                        "horizontalAlignment": {
+                          "type": "string",
+                          "value": "center"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "entity": "word",
+                    "id": "word:default",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "widthMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "heightMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          }
+                        }
+                      },
+                      {
+                        "component": "text",
+                        "props": {
+                          "effectsInheritBaseAlpha": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "caseTransform": {
+                            "type": "string",
+                            "value": "uppercase"
+                          }
+                        }
+                      },
+                      {
+                        "component": "font",
+                        "props": {
+                          "family": {
+                            "type": "fontFamily",
+                            "value": [
+                              "Poppins"
+                            ]
+                          },
+                          "size": {
+                            "type": "number",
+                            "value": 42
+                          },
+                          "weight": {
+                            "type": "fontWeight",
+                            "value": 700
+                          }
+                        },
+                        "dependencyOf": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:past",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:future",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:previous",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:current",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:next",
+                    "styleSource": "default"
+                  }
+                ]
+              },
+              {
+                "entity": "row",
+                "id": "row:past",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:future",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:previous",
+                "styleSource": "default"
+              },
+              {
+                "entity": "background",
+                "id": "background:default",
+                "forEntityId": "row:current",
+                "components": [
+                  {
+                    "component": "transform",
+                    "props": {
+                      "positioning": {
+                        "type": "string",
+                        "value": "absolute"
+                      },
+                      "position": {
+                        "type": "vector2",
+                        "value": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "transition": {
+                          "enabled": true,
+                          "type": "tween",
+                          "durationSeconds": 0.15,
+                          "easeType": "ease",
+                          "scope": "shared",
+                          "startValue": "previousDisplayed",
+                          "initialBehavior": "immediate"
+                        }
+                      },
+                      "dimensions": {
+                        "type": "vector2",
+                        "value": {
+                          "x": 100,
+                          "y": 100
+                        },
+                        "transition": {
+                          "enabled": true,
+                          "type": "tween",
+                          "durationSeconds": 0.15,
+                          "easeType": "ease",
+                          "scope": "shared",
+                          "startValue": "previousDisplayed",
+                          "initialBehavior": "immediate"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "component": "followTarget",
+                    "props": {
+                      "delaySeconds": {
+                        "type": "number",
+                        "value": 0,
+                        "randomizer": {
+                          "enabled": false,
+                          "deterministic": true,
+                          "values": [
+                            0
+                          ],
+                          "trigger": "onStart"
+                        }
+                      },
+                      "target": {
+                        "type": "string",
+                        "value": "currentRow"
+                      },
+                      "targetScope": {
+                        "type": "string",
+                        "value": "timeline"
+                      },
+                      "boundaryHandoff": {
+                        "type": "string",
+                        "value": "allowTransition",
+                        "randomizer": {
+                          "enabled": false,
+                          "deterministic": true,
+                          "values": [
+                            "allowTransition"
+                          ],
+                          "trigger": "onStart"
+                        }
+                      },
+                      "transitionScope": {
+                        "type": "string",
+                        "value": "sameParent"
+                      },
+                      "mappings": {
+                        "type": "array",
+                        "value": [
+                          {
+                            "destination": "Transform.position.x",
+                            "source": "bounds.x"
+                          },
+                          {
+                            "destination": "Transform.position.y",
+                            "source": "bounds.y"
+                          },
+                          {
+                            "destination": "Transform.width",
+                            "source": "bounds.width"
+                          },
+                          {
+                            "destination": "Transform.height",
+                            "source": "bounds.height"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "component": "backgroundStyle",
+                    "props": {
+                      "fill": {
+                        "type": "paint",
+                        "value": {
+                          "type": "solid",
+                          "color": "rgb(239, 68, 68)"
+                        }
+                      },
+                      "fillPattern": {
+                        "type": "pattern",
+                        "pattern": "single",
+                        "colors": [],
+                        "offset": 0
+                      },
+                      "borderRadius": {
+                        "type": "number",
+                        "value": 0,
+                        "squircle": true
+                      },
+                      "bandPadding": {
+                        "top": {
+                          "type": "number",
+                          "value": 6
+                        },
+                        "right": {
+                          "type": "number",
+                          "value": 16
+                        },
+                        "bottom": {
+                          "type": "number",
+                          "value": 6
+                        },
+                        "left": {
+                          "type": "number",
+                          "value": 16
+                        },
+                        "linkedTopBottom": {
+                          "type": "boolean",
+                          "value": true
+                        },
+                        "linkedLeftRight": {
+                          "type": "boolean",
+                          "value": true
+                        }
+                      },
+                      "blockPadding": {
+                        "top": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "right": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "bottom": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "left": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "linkedTopBottom": {
+                          "type": "boolean",
+                          "value": true
+                        },
+                        "linkedLeftRight": {
+                          "type": "boolean",
+                          "value": true
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "entity": "row",
+                "id": "row:current",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:next",
+                "styleSource": "default"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

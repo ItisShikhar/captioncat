@@ -1,0 +1,122 @@
+{
+  "presets": [
+    {
+      "id": "ios",
+      "name": "iOS",
+      "asset": "ios",
+      "shape": "caret",
+      "colorMode": "original",
+      "color": "#007AFF",
+      "size": 0,
+      "sizeScale": 1.21875,
+      "offset": { "x": 6, "y": -2 }
+    },
+    {
+      "id": "windows",
+      "name": "Windows",
+      "asset": "windows",
+      "shape": "caret",
+      "colorMode": "original",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 1.125,
+      "offset": { "x": 4, "y": -6 }
+    },
+    {
+      "id": "mac",
+      "name": "Mac",
+      "asset": "mac",
+      "shape": "caret",
+      "colorMode": "original",
+      "color": "#000000",
+      "size": 0,
+      "sizeScale": 1.2,
+      "offset": { "x": 4, "y": -4 }
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "asset": "mac2",
+      "shape": "underscore",
+      "colorMode": "original",
+      "color": "#000000",
+      "size": 0,
+      "sizeScale": 1.1,
+      "offset": { "x": 6, "y": -4 }
+    },
+    {
+      "id": "old",
+      "name": "Old",
+      "asset": "old",
+      "shape": "block",
+      "colorMode": "original",
+      "color": "#000000",
+      "size": 0,
+      "sizeScale": 1.1,
+      "offset": { "x": 4, "y": -4 }
+    },
+    {
+      "id": "caret",
+      "name": "Caret",
+      "asset": "caret",
+      "shape": "caret",
+      "colorMode": "tint",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 0.375,
+      "offset": { "x": 8, "y": -16 }
+    },
+    {
+      "id": "caret-bold",
+      "name": "Caret Bold",
+      "asset": "caret-bold",
+      "shape": "caret",
+      "colorMode": "tint",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 0.4375,
+      "offset": { "x": 8, "y": -16 }
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "asset": "block",
+      "shape": "block",
+      "colorMode": "tint",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 1.0625,
+      "offset": { "x": 5, "y": -5 }
+    },
+    {
+      "id": "square",
+      "name": "Square",
+      "shape": "square",
+      "colorMode": "tint",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 0.6,
+      "offset": { "x": 6, "y": -2 }
+    },
+    {
+      "id": "underscore",
+      "name": "Underscore",
+      "shape": "underscore",
+      "colorMode": "tint",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 0.75,
+      "offset": { "x": 8, "y": -2 }
+    },
+    {
+      "id": "custom",
+      "name": "Custom",
+      "shape": "glyph",
+      "colorMode": "original",
+      "color": "#FFFFFF",
+      "size": 0,
+      "sizeScale": 1,
+      "offset": { "x": 0, "y": 0 }
+    }
+  ]
+}

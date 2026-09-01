@@ -1,0 +1,1229 @@
+{
+  "id": "sour-gummy",
+  "name": "Sour Gummy",
+  "schemaVersion": 1,
+  "captionLayout": {
+    "textDirection": "auto",
+    "rowsPerPage": {
+      "mode": "fixed",
+      "count": 1
+    },
+    "wordsPerRow": {
+      "mode": "auto"
+    },
+    "flowParticipation": {
+      "collapseMode": "reserve",
+      "rows": {
+        "default": "include",
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      },
+      "words": {
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      }
+    },
+    "horizontalFit": "natural",
+    "horizontalFitMinScale": 0.5,
+    "horizontalFitMaxScale": 1.25,
+    "breaking": {
+      "smartBreaks": "auto",
+      "rowBreakPauseThresholdSeconds": 0.3,
+      "pageBreakPauseThresholdSeconds": 2.5,
+      "pauseSpacing": {
+        "enabled": false,
+        "thresholdSeconds": 0.8,
+        "extraSpacing": 32,
+        "maxExtraSpacing": 64
+      },
+      "longWordThresholdMode": "automatic",
+      "longWordThresholdSeconds": 0.75,
+      "breakPriorities": {
+        "rows": [
+          {
+            "id": "source",
+            "mode": "always"
+          },
+          {
+            "id": "punctuation",
+            "mode": "prefer"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "word-count",
+            "mode": "required"
+          },
+          {
+            "id": "width",
+            "mode": "required"
+          },
+          {
+            "id": "long-word",
+            "mode": "required"
+          }
+        ],
+        "pages": [
+          {
+            "id": "source",
+            "mode": "off"
+          },
+          {
+            "id": "punctuation",
+            "mode": "off"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "row-count",
+            "mode": "required"
+          },
+          {
+            "id": "height",
+            "mode": "required"
+          }
+        ]
+      },
+      "wordWrapping": {
+        "mode": "wrap",
+        "breakCharacters": [
+          "-"
+        ],
+        "breakMarker": "-",
+        "overflowTolerance": 8
+      },
+      "sentenceEndings": [
+        ".",
+        "!",
+        "?",
+        "।",
+        "॥",
+        "。",
+        "！",
+        "？"
+      ],
+      "strongPunctuation": [
+        ";",
+        ":",
+        "…",
+        "；",
+        "：",
+        "……"
+      ],
+      "additionalCharacters": [],
+      "sourceLineBreaks": "preserve"
+    }
+  },
+  "stateWindow": {
+    "previousWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "previousRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextRows": {
+      "mode": "fixedCount",
+      "count": 1
+    }
+  },
+  "timing": {
+    "captionHoldThresholdSeconds": 1
+  },
+  "metadata": {
+    "badges": [
+      "Playful",
+      "Trendy",
+      "Vlogs",
+      "twitch"
+    ],
+    "platform": "Originals",
+    "previewBackgroundId": "image-interior-deco",
+    "previewStoryId": "main-character"
+  },
+  "preview": {
+    "aspectRatio": "9:16",
+    "properties": {
+      "background": {
+        "type": "paint",
+        "value": {
+          "type": "solid",
+          "color": "rgb(191 236 255)"
+        }
+      },
+      "fontScaleMultiplier": {
+        "type": "number",
+        "value": 0.375
+      }
+    }
+  },
+  "design": {
+    "entity": "viewport",
+    "id": "viewport",
+    "components": [
+      {
+        "component": "transform"
+      },
+      {
+        "component": "layout",
+        "props": {
+          "childrenAlignment": {
+            "horizontalAlignment": {
+              "type": "string",
+              "value": "center"
+            },
+            "verticalAlignment": {
+              "type": "string",
+              "value": "bottom"
+            }
+          },
+          "padding": {
+            "top": {
+              "type": "number",
+              "value": 0
+            },
+            "right": {
+              "type": "number",
+              "value": 0
+            },
+            "bottom": {
+              "type": "number",
+              "value": 0
+            },
+            "left": {
+              "type": "number",
+              "value": 0
+            },
+            "linkedTopBottom": {
+              "type": "boolean",
+              "value": true
+            },
+            "linkedLeftRight": {
+              "type": "boolean",
+              "value": true
+            }
+          }
+        }
+      }
+    ],
+    "children": [
+      {
+        "entity": "videoArea",
+        "id": "videoArea",
+        "components": [
+          {
+            "component": "layout",
+            "props": {
+              "layoutMode": {
+                "type": "string",
+                "value": "overlay"
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 0
+                },
+                "right": {
+                  "type": "number",
+                  "value": 0
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 0
+                },
+                "left": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "clipContent": {
+                "type": "boolean",
+                "value": true
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "video",
+            "id": "video"
+          }
+        ]
+      },
+      {
+        "entity": "compositionArea",
+        "id": "compositionArea",
+        "components": [
+          {
+            "component": "transform",
+            "props": {
+              "widthMode": {
+                "type": "string",
+                "value": "fitParent"
+              },
+              "heightMode": {
+                "type": "string",
+                "value": "fitParent"
+              }
+            }
+          },
+          {
+            "component": "layout",
+            "props": {
+              "childrenAlignment": {
+                "horizontalAlignment": {
+                  "type": "string",
+                  "value": "center"
+                },
+                "verticalAlignment": {
+                  "type": "string",
+                  "value": "bottom"
+                }
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 20
+                },
+                "right": {
+                  "type": "number",
+                  "value": 20
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 20
+                },
+                "left": {
+                  "type": "number",
+                  "value": 20
+                }
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "page",
+            "id": "page",
+            "components": [
+              {
+                "component": "transform",
+                "props": {
+                  "position": {
+                    "type": "vector2",
+                    "value": {
+                      "x": 0,
+                      "y": -180
+                    }
+                  }
+                }
+              },
+              {
+                "component": "layout",
+                "props": {
+                  "childrenAlignment": {
+                    "horizontalAlignment": {
+                      "type": "string",
+                      "value": "center"
+                    },
+                    "verticalAlignment": {
+                      "type": "string",
+                      "value": "bottom"
+                    }
+                  }
+                }
+              }
+            ],
+            "children": [
+              {
+                "entity": "row",
+                "id": "row:default",
+                "components": [
+                  {
+                    "component": "transform",
+                    "props": {
+                      "widthMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      },
+                      "heightMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      }
+                    }
+                  },
+                  {
+                    "component": "layout",
+                    "props": {
+                      "childrenAlignment": {
+                        "horizontalAlignment": {
+                          "type": "string",
+                          "value": "center"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "entity": "background",
+                    "id": "background:default",
+                    "forEntityId": "word:default",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "positioning": {
+                            "type": "string",
+                            "value": "absolute"
+                          },
+                          "dimensions": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 100,
+                              "y": 100
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "component": "followTarget",
+                        "props": {
+                          "target": {
+                            "type": "string",
+                            "value": "currentWord"
+                          },
+                          "anchor": {
+                            "type": "string",
+                            "value": "topLeft"
+                          },
+                          "mappings": {
+                            "type": "array",
+                            "value": [
+                              {
+                                "destination": "Transform.position.x",
+                                "source": "bounds.x"
+                              },
+                              {
+                                "destination": "Transform.position.y",
+                                "source": "bounds.y"
+                              },
+                              {
+                                "destination": "Transform.width",
+                                "source": "bounds.width"
+                              },
+                              {
+                                "destination": "Transform.height",
+                                "source": "bounds.height"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "component": "backgroundStyle",
+                        "props": {
+                          "effectsInheritBaseAlpha": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "fill": {
+                            "type": "paint",
+                            "value": {
+                              "type": "linear-gradient",
+                              "angle": 0,
+                              "stops": [
+                                {
+                                  "offset": 0,
+                                  "color": "#d4ff00"
+                                },
+                                {
+                                  "offset": 1,
+                                  "color": "#f6ff00"
+                                }
+                              ]
+                            }
+                          },
+                          "fillPattern": {
+                            "type": "pattern",
+                            "pattern": "single",
+                            "colors": [],
+                            "offset": 0
+                          },
+                          "pathShape": {
+                            "type": "string",
+                            "value": "pill"
+                          },
+                          "borderRadius": {
+                            "type": "number",
+                            "value": 6,
+                            "squircle": true
+                          },
+                          "bandPadding": {
+                            "top": {
+                              "type": "number",
+                              "value": 14
+                            },
+                            "right": {
+                              "type": "number",
+                              "value": 20
+                            },
+                            "bottom": {
+                              "type": "number",
+                              "value": 14
+                            },
+                            "left": {
+                              "type": "number",
+                              "value": 20
+                            }
+                          },
+                          "blockPadding": {
+                            "top": {
+                              "type": "number",
+                              "value": 0
+                            },
+                            "right": {
+                              "type": "number",
+                              "value": 0
+                            },
+                            "bottom": {
+                              "type": "number",
+                              "value": 0
+                            },
+                            "left": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          },
+                          "scale": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 0,
+                              "y": 0
+                            }
+                          },
+                          "borderRadiusMode": {
+                            "type": "string",
+                            "value": "uniform"
+                          }
+                        }
+                      },
+                      {
+                        "component": "animation",
+                        "enabled": true,
+                        "name": "Custom Enter",
+                        "phase": "custom",
+                        "scope": "self",
+                        "durationSeconds": 0.125,
+                        "delaySeconds": 0,
+                        "playbackMode": "once",
+                        "triggerBehavior": "adaptive",
+                        "lifecycleScheduling": "overlap",
+                        "sequencer": {
+                          "pattern": "simultaneous",
+                          "interval": 0,
+                          "reverse": false,
+                          "seed": 0
+                        },
+                        "tracks": [
+                          {
+                            "enabled": true,
+                            "target": "BackgroundStyle.scale",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": {
+                                  "x": 0.8,
+                                  "y": 0.8
+                                },
+                                "curve": "easeInOut"
+                              },
+                              {
+                                "time": 0.15,
+                                "value": {
+                                  "x": 1,
+                                  "y": 1
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "enabled": true,
+                            "target": "BackgroundStyle.fill",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#d4ff0000"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#f6ff0000"
+                                    }
+                                  ]
+                                },
+                                "curve": "easeOut"
+                              },
+                              {
+                                "time": 0.15,
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#d4ff00"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#f6ff00"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "enabled": true,
+                            "target": "Streak#streak-4912a816aa4ba051:background:default.distance",
+                            "keyframes": [
+                              {
+                                "time": 0.05,
+                                "value": 4,
+                                "curve": "easeOut"
+                              },
+                              {
+                                "time": 0.125,
+                                "value": 0
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "component": "animation",
+                        "enabled": true,
+                        "name": "Animation",
+                        "phase": "active",
+                        "scope": "self",
+                        "durationSeconds": 0.3,
+                        "delaySeconds": 0,
+                        "playbackMode": "once",
+                        "triggerBehavior": "adaptive",
+                        "lifecycleScheduling": "overlap",
+                        "sequencer": {
+                          "pattern": "simultaneous",
+                          "interval": 0,
+                          "reverse": false,
+                          "seed": 0
+                        },
+                        "tracks": [
+                          {
+                            "enabled": true,
+                            "target": "Streak#streak-4912a816aa4ba051:background:default.angle",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": -180,
+                                "curve": "easeOut"
+                              },
+                              {
+                                "time": 0.3,
+                                "value": 0
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "effects": [
+                      {
+                        "effect": "streak",
+                        "id": "streak-4912a816aa4ba051:background:default",
+                        "props": {
+                          "appliesOn": {
+                            "type": "string",
+                            "value": "base"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "steps": {
+                            "type": "number",
+                            "value": 24
+                          },
+                          "angle": {
+                            "type": "number",
+                            "value": 90
+                          },
+                          "distance": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "maxOpacity": {
+                            "type": "number",
+                            "value": 0.7
+                          },
+                          "showOriginal": {
+                            "type": "string",
+                            "value": "none"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:default",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "widthMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "heightMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "scale": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 0.9,
+                              "y": 0.9
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "component": "text",
+                        "props": {
+                          "color": {
+                            "type": "paint",
+                            "value": {
+                              "type": "solid",
+                              "color": "#ffffff"
+                            }
+                          }
+                        },
+                        "effects": [
+                          {
+                            "effect": "stroke",
+                            "id": "stroke-1546450f79a751bf:word:default",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "base"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#001647"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#255600"
+                                    }
+                                  ]
+                                }
+                              },
+                              "width": {
+                                "type": "number",
+                                "value": 2
+                              },
+                              "style": {
+                                "type": "string",
+                                "value": "solid"
+                              },
+                              "joinType": {
+                                "type": "string",
+                                "value": "round"
+                              },
+                              "capType": {
+                                "type": "string",
+                                "value": "round"
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 1
+                              },
+                              "alignment": {
+                                "type": "string",
+                                "value": "outside"
+                              },
+                              "antialiasScale": {
+                                "type": "number",
+                                "value": 2
+                              }
+                            }
+                          },
+                          {
+                            "effect": "shadow",
+                            "id": "shadow-caf5ce4c2a6715d7:word:default",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "previousEffect"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "blurRadius": {
+                                "type": "number",
+                                "value": 0
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#223300"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#81ac00"
+                                    }
+                                  ]
+                                }
+                              },
+                              "offset": {
+                                "type": "vector2",
+                                "value": {
+                                  "x": 4,
+                                  "y": 4
+                                }
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 1
+                              },
+                              "longShadow": {
+                                "type": "boolean",
+                                "value": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "component": "font",
+                        "props": {
+                          "family": {
+                            "type": "fontFamily",
+                            "value": [
+                              "Sour Gummy"
+                            ]
+                          },
+                          "size": {
+                            "type": "number",
+                            "value": 56
+                          }
+                        },
+                        "dependencyOf": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:past",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:future",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:previous",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:current",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "positioning": {
+                            "type": "string",
+                            "value": "flow"
+                          },
+                          "position": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 0,
+                              "y": 0
+                            }
+                          },
+                          "positionXUnit": {
+                            "type": "string",
+                            "value": "pt"
+                          },
+                          "positionYUnit": {
+                            "type": "string",
+                            "value": "pt"
+                          },
+                          "dimensions": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 0,
+                              "y": 0
+                            }
+                          },
+                          "widthUnit": {
+                            "type": "string",
+                            "value": "pt"
+                          },
+                          "heightUnit": {
+                            "type": "string",
+                            "value": "pt"
+                          },
+                          "widthMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "heightMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "rotation": {
+                            "type": "number",
+                            "value": 0
+                          },
+                          "scale": {
+                            "type": "vector2",
+                            "value": {
+                              "x": 0,
+                              "y": 0
+                            }
+                          },
+                          "pivot": {
+                            "type": "string",
+                            "value": "center"
+                          },
+                          "opacity": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "component": "text",
+                        "props": {
+                          "color": {
+                            "type": "paint",
+                            "value": {
+                              "type": "solid",
+                              "color": "#ffffff"
+                            }
+                          },
+                          "effectsInheritBaseAlpha": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "caseTransform": {
+                            "type": "string",
+                            "value": "none"
+                          },
+                          "letterSpacing": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        },
+                        "effects": [
+                          {
+                            "effect": "stroke",
+                            "id": "stroke-b68e345266a74aa9:word:current",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "base"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#001647"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#255600"
+                                    }
+                                  ]
+                                }
+                              },
+                              "width": {
+                                "type": "number",
+                                "value": 2
+                              },
+                              "style": {
+                                "type": "string",
+                                "value": "solid"
+                              },
+                              "joinType": {
+                                "type": "string",
+                                "value": "round"
+                              },
+                              "capType": {
+                                "type": "string",
+                                "value": "round"
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 1
+                              },
+                              "alignment": {
+                                "type": "string",
+                                "value": "outside"
+                              },
+                              "antialiasScale": {
+                                "type": "number",
+                                "value": 2
+                              }
+                            }
+                          },
+                          {
+                            "effect": "shadow",
+                            "id": "shadow-3a6c3163a9385f7f:word:current",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "previousEffect"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "blurRadius": {
+                                "type": "number",
+                                "value": 0
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "linear-gradient",
+                                  "angle": 0,
+                                  "stops": [
+                                    {
+                                      "offset": 0,
+                                      "color": "#223300"
+                                    },
+                                    {
+                                      "offset": 1,
+                                      "color": "#81ac00"
+                                    }
+                                  ]
+                                }
+                              },
+                              "offset": {
+                                "type": "vector2",
+                                "value": {
+                                  "x": 4,
+                                  "y": 4
+                                }
+                              },
+                              "longShadow": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 1
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "component": "font",
+                        "props": {
+                          "family": {
+                            "type": "fontFamily",
+                            "value": [
+                              "Sour Gummy"
+                            ]
+                          },
+                          "size": {
+                            "type": "number",
+                            "value": 56
+                          },
+                          "weight": {
+                            "type": "fontWeight",
+                            "value": 400
+                          },
+                          "style": {
+                            "type": "string",
+                            "value": "normal"
+                          }
+                        },
+                        "dependencyOf": "text"
+                      },
+                      {
+                        "component": "animation",
+                        "enabled": true,
+                        "name": "Custom Enter",
+                        "phase": "enter",
+                        "scope": "self",
+                        "durationSeconds": 0.1,
+                        "delaySeconds": 0,
+                        "playbackMode": "once",
+                        "triggerBehavior": "adaptive",
+                        "lifecycleScheduling": "overlap",
+                        "sequencer": {
+                          "pattern": "simultaneous",
+                          "interval": 0,
+                          "reverse": false,
+                          "seed": 0
+                        },
+                        "tracks": [
+                          {
+                            "enabled": true,
+                            "target": "Transform.position",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": {
+                                  "x": 0,
+                                  "y": 0
+                                },
+                                "curve": "easeInOut"
+                              },
+                              {
+                                "time": 0.1,
+                                "value": {
+                                  "x": 0,
+                                  "y": -2
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "enabled": true,
+                            "target": "Transform.scale",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": {
+                                  "x": 0.9,
+                                  "y": 0.9
+                                },
+                                "curve": "easeInOut"
+                              },
+                              {
+                                "time": 0.05,
+                                "value": {
+                                  "x": 1.1,
+                                  "y": 1.1
+                                },
+                                "curve": "easeInOut"
+                              },
+                              {
+                                "time": 0.1,
+                                "value": {
+                                  "x": 1.025,
+                                  "y": 1.025
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "enabled": false,
+                            "target": "Transform.opacity",
+                            "keyframes": [
+                              {
+                                "time": 0,
+                                "value": 1,
+                                "curve": "easeInOut"
+                              },
+                              {
+                                "time": 0.1,
+                                "value": 1
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:next",
+                    "styleSource": "default"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

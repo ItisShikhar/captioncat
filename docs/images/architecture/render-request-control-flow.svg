@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1885" width="1600" height="1885" role="img" aria-labelledby="title description">
+  <title id="title">captioncat render control flow</title>
+  <desc id="description">captioncat selects a transcript source, resolves transcription providers when needed, checks for render entries, processes each render entry, writes requested outputs, and repeats until all render entries are complete.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 z" fill="#dc2626"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 400 34px Arial, sans-serif; fill: #0f172a; }
+      .section { font: 700 21px Arial, sans-serif; fill: #334155; }
+      .label { font: 700 18px Arial, sans-serif; fill: #0f172a; }
+      .body { font: 16px Arial, sans-serif; fill: #334155; }
+      .small { font: 14px Arial, sans-serif; fill: #475569; }
+      .pipeline-label { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+      .edge-label {
+        font: 14px Arial, sans-serif;
+        fill: #475569;
+        paint-order: stroke;
+        stroke: #ffffff;
+        stroke-width: 8px;
+        stroke-linejoin: round;
+      }
+      .source-label { fill: #2563eb; }
+      .error-label { fill: #dc2626; }
+      .stage { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+      .pipeline { fill: #fdf2f8; stroke: #db2777; stroke-width: 2; stroke-dasharray: 10 8; }
+      .output-stage { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2; }
+      .input { fill: #eff6ff; stroke: #60a5fa; }
+      .resolve { fill: #f8fafc; stroke: #94a3b8; }
+      .frames { fill: #dbeafe; stroke: #2563eb; }
+      .decision { fill: #ecfccb; stroke: #65a30d; stroke-width: 2; }
+      .success { fill: #dcfce7; stroke: #16a34a; }
+      .error { fill: #fee2e2; stroke: #dc2626; }
+      .output { fill: #f8fafc; stroke: #64748b; }
+      .box { stroke-width: 2; filter: url(#shadow); }
+      .arrow { fill: none; stroke: #475569; stroke-width: 3; marker-end: url(#arrow); }
+      .source-arrow { fill: none; stroke: #2563eb; stroke-width: 3; marker-end: url(#arrow-blue); }
+      .error-arrow { fill: none; stroke: #dc2626; stroke-width: 3; marker-end: url(#arrow-red); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1885" fill="#ffffff"/>
+  <text x="70" y="70" class="title">caption<tspan font-weight="700">cat</tspan> render control flow</text>
+  <text x="70" y="105" class="body">Resolve one transcript, process each <tspan font-family="monospace">renders[]</tspan> entry, and write only the requested outputs.</text>
+
+  <rect x="60" y="145" width="700" height="650" rx="24" class="stage"/>
+  <text x="410" y="180" text-anchor="middle" class="section">1. Select transcript source</text>
+
+  <rect x="820" y="145" width="720" height="700" rx="24" class="stage"/>
+  <text x="1180" y="180" text-anchor="middle" class="section">2. Resolve transcript</text>
+
+  <rect x="60" y="870" width="1480" height="430" rx="24" class="pipeline"/>
+  <text x="800" y="905" text-anchor="middle" class="section">Stages 3-8: Render one <tspan font-family="monospace">renders[]</tspan> entry</text>
+
+  <rect x="60" y="1370" width="1480" height="320" rx="24" class="output-stage"/>
+  <text x="800" y="1405" text-anchor="middle" class="section">9. Write requested outputs</text>
+
+  <!-- Input selection -->
+  <path d="M270 290 H300" class="arrow"/>
+  <path d="M480 290 H620 V275" class="arrow"/>
+  <path d="M390 360 V400" class="arrow"/>
+  <path d="M480 460 H530" class="arrow"/>
+  <path d="M390 520 V580" class="arrow"/>
+  <path d="M480 640 H530" class="arrow"/>
+  <path d="M390 700 V736 H530" class="error-arrow"/>
+
+  <!-- Transcript source handoff -->
+  <path d="M710 235 H715 V215 H1180" class="source-arrow"/>
+  <path d="M710 460 H735 V255 H1180" class="source-arrow"/>
+  <path d="M710 640 H755 V360 H840" class="source-arrow"/>
+
+  <!-- Provider resolution -->
+  <path d="M930 420 V450" class="arrow"/>
+  <path d="M1020 360 H1100 V348 H1180" class="error-arrow"/>
+  <path d="M930 515 V550" class="arrow"/>
+  <path d="M1020 610 H1090 V295 H1180" class="arrow"/>
+  <path d="M930 670 V705" class="arrow"/>
+  <path d="M840 765 H780 V280 H930 V300" class="arrow"/>
+  <path d="M1020 765 H1180" class="error-arrow"/>
+
+  <!-- Render-entry decision -->
+  <path d="M1460 250 H1480 V410 H1320 V450" class="arrow"/>
+  <path d="M1320 590 H1510 V855 H260 V955" class="arrow"/>
+
+  <!-- Per-render pipeline -->
+  <path d="M410 995 H650" class="arrow"/>
+  <path d="M950 995 H1190" class="arrow"/>
+  <path d="M1340 1035 V1060" class="arrow"/>
+  <path d="M1190 1100 H950" class="arrow"/>
+  <path d="M650 1100 H410" class="arrow"/>
+  <path d="M260 1140 V1165" class="arrow"/>
+  <path d="M410 1205 H650" class="arrow"/>
+  <path d="M950 1205 H1190" class="arrow"/>
+
+  <!-- Output routing -->
+  <path d="M1340 1245 V1345 H600 V1470 H650" class="arrow"/>
+  <path d="M650 1470 H290 V1515" class="arrow"/>
+  <path d="M800 1505 V1515" class="arrow"/>
+  <path d="M950 1470 H1310 V1515" class="arrow"/>
+  <path d="M290 1590 V1605 H700 V1625" class="arrow"/>
+  <path d="M800 1590 V1625" class="arrow"/>
+  <path d="M1310 1590 V1605 H900 V1625" class="arrow"/>
+  <path d="M800 1680 V1715" class="arrow"/>
+
+  <!-- Render loop -->
+  <path d="M710 1775 H35 V925 H260 V955" class="arrow"/>
+  <path d="M890 1775 H1350" class="arrow"/>
+  <path d="M1405 520 H1555 V1775 H1530" class="arrow"/>
+
+  <!-- Input selection nodes -->
+  <rect x="100" y="242" width="170" height="96" rx="16" class="box input"/>
+  <text x="185" y="278" text-anchor="middle" class="label">RenderRequest</text>
+  <text x="185" y="305" text-anchor="middle" class="body">input, renders,</text>
+  <text x="185" y="328" text-anchor="middle" class="body">and exports</text>
+
+  <path d="M390 220 L480 290 L390 360 L300 290 Z" class="box decision"/>
+  <text x="390" y="283" text-anchor="middle" class="body">input.transcript</text>
+  <text x="390" y="306" text-anchor="middle" class="body">non-empty?</text>
+
+  <rect x="530" y="195" width="180" height="80" rx="14" class="box success"/>
+  <text x="620" y="228" text-anchor="middle" class="label">Use prepared</text>
+  <text x="620" y="252" text-anchor="middle" class="label">transcript</text>
+
+  <path d="M390 400 L480 460 L390 520 L300 460 Z" class="box decision"/>
+  <text x="390" y="453" text-anchor="middle" class="body">input.captions</text>
+  <text x="390" y="476" text-anchor="middle" class="body">present?</text>
+
+  <rect x="530" y="420" width="180" height="80" rx="14" class="box resolve"/>
+  <text x="620" y="453" text-anchor="middle" class="label">Parse captions</text>
+  <text x="620" y="477" text-anchor="middle" class="body">JSON / SRT / VTT / ASS</text>
+
+  <path d="M390 580 L480 640 L390 700 L300 640 Z" class="box decision"/>
+  <text x="390" y="633" text-anchor="middle" class="body">input.video or</text>
+  <text x="390" y="656" text-anchor="middle" class="body">input.audio?</text>
+
+  <rect x="530" y="600" width="180" height="80" rx="14" class="box resolve"/>
+  <text x="620" y="633" text-anchor="middle" class="label">Prepare audio</text>
+  <text x="620" y="657" text-anchor="middle" class="body">for transcription</text>
+
+  <rect x="530" y="715" width="180" height="42" rx="12" class="box error"/>
+  <text x="620" y="741" text-anchor="middle" class="body">Error: no source</text>
+
+  <!-- Transcript resolution nodes -->
+  <rect x="1180" y="190" width="280" height="120" rx="14" class="box success"/>
+  <text x="1320" y="232" text-anchor="middle" class="label">TranscriptEntry[]</text>
+  <text x="1320" y="268" text-anchor="middle" class="body">prepared or transcribed</text>
+
+  <path d="M930 300 L1020 360 L930 420 L840 360 Z" class="box decision"/>
+  <text x="930" y="353" text-anchor="middle" class="body">Valid provider</text>
+  <text x="930" y="376" text-anchor="middle" class="body">available?</text>
+
+  <rect x="1180" y="320" width="270" height="55" rx="12" class="box error"/>
+  <text x="1315" y="354" text-anchor="middle" class="body">Error: no valid provider key</text>
+
+  <rect x="840" y="450" width="180" height="65" rx="14" class="box resolve"/>
+  <text x="930" y="478" text-anchor="middle" class="label">Call provider</text>
+  <text x="930" y="500" text-anchor="middle" class="body">transcribe audio</text>
+
+  <path d="M930 550 L1020 610 L930 670 L840 610 Z" class="box decision"/>
+  <text x="930" y="603" text-anchor="middle" class="body">Request</text>
+  <text x="930" y="626" text-anchor="middle" class="body">succeeded?</text>
+
+  <path d="M930 705 L1020 765 L930 825 L840 765 Z" class="box decision"/>
+  <text x="930" y="758" text-anchor="middle" class="body">More</text>
+  <text x="930" y="781" text-anchor="middle" class="body">providers?</text>
+
+  <rect x="1180" y="735" width="270" height="60" rx="12" class="box error"/>
+  <text x="1315" y="771" text-anchor="middle" class="body">Error: all providers failed</text>
+
+  <path d="M1320 450 L1405 520 L1320 590 L1235 520 Z" class="box decision"/>
+  <text x="1320" y="513" text-anchor="middle" class="body">Has</text>
+  <text x="1320" y="536" text-anchor="middle" class="body">renders?</text>
+
+  <!-- Per-render pipeline nodes -->
+  <rect x="110" y="955" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="260" y="1003" text-anchor="middle" class="pipeline-label">Load preset</text>
+
+  <rect x="650" y="955" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="800" y="987" text-anchor="middle" class="pipeline-label">Validate preset</text>
+  <text x="800" y="1011" text-anchor="middle" class="pipeline-label">schema</text>
+
+  <rect x="1190" y="955" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="1340" y="987" text-anchor="middle" class="pipeline-label">Merge render</text>
+  <text x="1340" y="1011" text-anchor="middle" class="pipeline-label">settings</text>
+
+  <rect x="1190" y="1060" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="1340" y="1092" text-anchor="middle" class="pipeline-label">Effective</text>
+  <text x="1340" y="1116" text-anchor="middle" class="pipeline-label">settings</text>
+
+  <rect x="650" y="1060" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="800" y="1108" text-anchor="middle" class="pipeline-label">ECS scene</text>
+
+  <rect x="110" y="1060" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="260" y="1092" text-anchor="middle" class="pipeline-label">Layout and</text>
+  <text x="260" y="1116" text-anchor="middle" class="pipeline-label">state</text>
+
+  <rect x="110" y="1165" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="260" y="1197" text-anchor="middle" class="pipeline-label">Evaluate</text>
+  <text x="260" y="1221" text-anchor="middle" class="pipeline-label">properties</text>
+
+  <rect x="650" y="1165" width="300" height="80" rx="14" class="box resolve"/>
+  <text x="800" y="1197" text-anchor="middle" class="pipeline-label">Load font and</text>
+  <text x="800" y="1221" text-anchor="middle" class="pipeline-label">image assets</text>
+
+  <rect x="1190" y="1165" width="300" height="80" rx="14" class="box frames"/>
+  <text x="1340" y="1197" text-anchor="middle" class="pipeline-label">Generate caption</text>
+  <text x="1340" y="1221" text-anchor="middle" class="pipeline-label">frames</text>
+
+  <!-- Output nodes -->
+  <rect x="650" y="1435" width="300" height="70" rx="14" class="box frames"/>
+  <text x="800" y="1464" text-anchor="middle" class="label">Write requested outputs</text>
+  <text x="800" y="1487" text-anchor="middle" class="body">route current render entry</text>
+
+  <rect x="140" y="1515" width="300" height="75" rx="14" class="box output"/>
+  <text x="290" y="1548" text-anchor="middle" class="label">PNG sequence</text>
+  <text x="290" y="1572" text-anchor="middle" class="body">one file per frame</text>
+
+  <rect x="650" y="1515" width="300" height="75" rx="14" class="box output"/>
+  <text x="800" y="1548" text-anchor="middle" class="label">Standalone caption movie</text>
+  <text x="800" y="1572" text-anchor="middle" class="body">transparent caption output</text>
+
+  <rect x="1160" y="1515" width="300" height="75" rx="14" class="box output"/>
+  <text x="1310" y="1548" text-anchor="middle" class="label">Overlay video</text>
+  <text x="1310" y="1572" text-anchor="middle" class="body">captioned source video</text>
+
+  <rect x="650" y="1625" width="300" height="55" rx="12" class="box success"/>
+  <text x="800" y="1659" text-anchor="middle" class="label">Render entry complete</text>
+
+  <!-- Render loop nodes -->
+  <path d="M800 1715 L890 1775 L800 1835 L710 1775 Z" class="box decision"/>
+  <text x="800" y="1768" text-anchor="middle" class="body">More</text>
+  <text x="800" y="1791" text-anchor="middle" class="body">renders?</text>
+
+  <rect x="1350" y="1748" width="180" height="55" rx="12" class="box success"/>
+  <text x="1440" y="1782" text-anchor="middle" class="label">Finish request</text>
+
+  <!-- Branch labels -->
+  <text x="500" y="280" class="edge-label">Yes</text>
+  <text x="406" y="383" class="edge-label">No</text>
+  <text x="492" y="445" class="edge-label">Yes</text>
+  <text x="406" y="552" class="edge-label">No</text>
+  <text x="492" y="625" class="edge-label">Yes</text>
+  <text x="406" y="720" class="edge-label">No</text>
+
+  <text x="715" y="205" class="edge-label source-label">prepared</text>
+  <text x="735" y="410" text-anchor="end" class="edge-label source-label">captions</text>
+  <text x="720" y="630" class="edge-label source-label">audio</text>
+
+  <text x="946" y="444" class="edge-label">Yes</text>
+  <text x="1040" y="348" class="edge-label error-label">No</text>
+  <text x="1040" y="597" class="edge-label">Yes</text>
+  <text x="946" y="698" class="edge-label">No</text>
+  <text x="790" y="753" class="edge-label">Yes</text>
+  <text x="1050" y="755" class="edge-label error-label">No</text>
+
+  <text x="1340" y="618" class="edge-label">Yes</text>
+  <text x="100" y="1765" class="edge-label">Yes</text>
+  <text x="1080" y="1765" class="edge-label">No</text>
+  <text x="1450" y="505" class="edge-label">No renders</text>
+</svg>

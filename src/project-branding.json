@@ -1,0 +1,10 @@
+{
+  "projectName": "captioncat",
+  "projectSlug": "captioncat",
+  "authorName": "Shikhar Srivastava",
+  "logoPath": "assets/svg/branding/captioncat-logo.svg",
+  "links": {
+    "github": "https://github.com/ItisShikhar/captioncat",
+    "linkedin": "https://www.linkedin.com/in/itisshikhar/"
+  }
+}

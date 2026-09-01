@@ -1,0 +1,629 @@
+{
+  "id": "no-context",
+  "name": "No Context",
+  "schemaVersion": 1,
+  "captionLayout": {
+    "textDirection": "auto",
+    "rowsPerPage": {
+      "mode": "auto"
+    },
+    "wordsPerRow": {
+      "mode": "fixed",
+      "count": 1
+    },
+    "flowParticipation": {
+      "collapseMode": "reserve",
+      "rows": {
+        "default": "include",
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      },
+      "words": {
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "collapse",
+        "future": "collapse"
+      }
+    },
+    "horizontalFit": "natural",
+    "horizontalFitMinScale": 0.5,
+    "horizontalFitMaxScale": 1.25,
+    "breaking": {
+      "smartBreaks": "auto",
+      "rowBreakPauseThresholdSeconds": 0.15,
+      "pageBreakPauseThresholdSeconds": 1,
+      "pauseSpacing": {
+        "enabled": false,
+        "thresholdSeconds": 0.8,
+        "extraSpacing": 32,
+        "maxExtraSpacing": 64
+      },
+      "longWordThresholdMode": "automatic",
+      "longWordThresholdSeconds": 0.75,
+      "breakPriorities": {
+        "rows": [
+          {
+            "id": "source",
+            "mode": "always"
+          },
+          {
+            "id": "punctuation",
+            "mode": "prefer"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "word-count",
+            "mode": "required"
+          },
+          {
+            "id": "width",
+            "mode": "required"
+          },
+          {
+            "id": "long-word",
+            "mode": "required"
+          }
+        ],
+        "pages": [
+          {
+            "id": "source",
+            "mode": "prefer"
+          },
+          {
+            "id": "punctuation",
+            "mode": "always"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "row-count",
+            "mode": "required"
+          },
+          {
+            "id": "height",
+            "mode": "required"
+          }
+        ]
+      },
+      "wordWrapping": {
+        "mode": "wrap",
+        "breakCharacters": [
+          "-"
+        ],
+        "breakMarker": "-",
+        "overflowTolerance": 8
+      },
+      "sentenceEndings": [
+        ".",
+        "!",
+        "?",
+        "।",
+        "॥",
+        "。",
+        "！",
+        "？"
+      ],
+      "strongPunctuation": [
+        ";",
+        ":",
+        "…",
+        "；",
+        "：",
+        "……"
+      ],
+      "additionalCharacters": [],
+      "sourceLineBreaks": "preserve"
+    }
+  },
+  "stateWindow": {
+    "previousWords": {
+      "mode": "all"
+    },
+    "currentWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextWords": {
+      "mode": "all"
+    },
+    "previousRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextRows": {
+      "mode": "fixedCount",
+      "count": 1
+    }
+  },
+  "timing": {
+    "captionHoldThresholdSeconds": 0.75
+  },
+  "metadata": {
+    "badges": [
+      "viral",
+      "convo",
+      "tiktok",
+      "meme"
+    ],
+    "platform": "Originals",
+    "previewBackgroundId": "image-beach-time",
+    "previewStoryId": "reason-2937"
+  },
+  "preview": {
+    "aspectRatio": "9:16",
+    "properties": {
+      "background": {
+        "type": "paint",
+        "value": {
+          "type": "solid",
+          "color": "rgb(250 249 186)"
+        }
+      }
+    }
+  },
+  "design": {
+    "entity": "viewport",
+    "id": "viewport",
+    "children": [
+      {
+        "entity": "videoArea",
+        "id": "videoArea",
+        "components": [
+          {
+            "component": "layout",
+            "props": {
+              "layoutMode": {
+                "type": "string",
+                "value": "overlay"
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 0
+                },
+                "right": {
+                  "type": "number",
+                  "value": 0
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 0
+                },
+                "left": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "clipContent": {
+                "type": "boolean",
+                "value": true
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "video",
+            "id": "video"
+          }
+        ]
+      },
+      {
+        "entity": "compositionArea",
+        "id": "compositionArea",
+        "components": [
+          {
+            "component": "transform",
+            "props": {
+              "widthMode": {
+                "type": "string",
+                "value": "fitParent"
+              },
+              "heightMode": {
+                "type": "string",
+                "value": "fitParent"
+              }
+            }
+          },
+          {
+            "component": "layout",
+            "props": {
+              "childrenAlignment": {
+                "horizontalAlignment": {
+                  "type": "string",
+                  "value": "start"
+                },
+                "verticalAlignment": {
+                  "type": "string",
+                  "value": "top"
+                }
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 24
+                },
+                "right": {
+                  "type": "number",
+                  "value": 24
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 24
+                },
+                "left": {
+                  "type": "number",
+                  "value": 24
+                }
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "page",
+            "id": "page",
+            "components": [
+              {
+                "component": "transform",
+                "props": {
+                  "position": {
+                    "type": "vector2",
+                    "value": {
+                      "x": 0,
+                      "y": -180
+                    },
+                    "randomizer": {
+                      "enabled": true,
+                      "deterministic": true,
+                      "keepWithinParentBounds": true,
+                      "axes": {
+                        "x": {
+                          "enabled": true,
+                          "values": [],
+                          "trigger": "onStart",
+                          "mode": "range",
+                          "range": [
+                            0,
+                            20
+                          ],
+                          "deterministic": false,
+                          "keepWithinParentBounds": true
+                        },
+                        "y": {
+                          "enabled": true,
+                          "values": [],
+                          "trigger": "onStart",
+                          "mode": "range",
+                          "range": [
+                            5,
+                            55
+                          ],
+                          "keepWithinParentBounds": true,
+                          "deterministic": false
+                        }
+                      }
+                    }
+                  },
+                  "positionXUnit": {
+                    "type": "string",
+                    "value": "%"
+                  },
+                  "positionYUnit": {
+                    "type": "string",
+                    "value": "%"
+                  },
+                  "widthMode": {
+                    "type": "string",
+                    "value": "fitChildren"
+                  },
+                  "heightMode": {
+                    "type": "string",
+                    "value": "fitContent"
+                  },
+                  "pivot": {
+                    "type": "string",
+                    "value": "topCenter"
+                  }
+                }
+              },
+              {
+                "component": "layout",
+                "props": {
+                  "childrenAlignment": {
+                    "horizontalAlignment": {
+                      "type": "string",
+                      "value": "center"
+                    },
+                    "verticalAlignment": {
+                      "type": "string",
+                      "value": "center"
+                    }
+                  },
+                  "padding": {
+                    "top": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "left": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "linkedTopBottom": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "linkedLeftRight": {
+                      "type": "boolean",
+                      "value": true
+                    }
+                  }
+                }
+              },
+              {
+                "component": "verticalSpacer",
+                "props": {
+                  "spacing": {
+                    "type": "number",
+                    "value": 5
+                  }
+                }
+              }
+            ],
+            "children": [
+              {
+                "entity": "row",
+                "id": "row:default",
+                "components": [
+                  {
+                    "component": "transform",
+                    "props": {
+                      "position": {
+                        "type": "vector2",
+                        "value": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "randomizer": {
+                          "enabled": true,
+                          "deterministic": true,
+                          "axes": {
+                            "x": {
+                              "enabled": true,
+                              "values": [
+                                -10,
+                                12,
+                                16,
+                                18
+                              ],
+                              "trigger": "onStart",
+                              "mode": "among",
+                              "keepWithinParentBounds": true,
+                              "deterministic": false
+                            }
+                          }
+                        }
+                      },
+                      "positionXUnit": {
+                        "type": "string",
+                        "value": "%"
+                      },
+                      "widthMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      },
+                      "heightMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      }
+                    }
+                  },
+                  {
+                    "component": "layout",
+                    "props": {
+                      "childrenAlignment": {
+                        "horizontalAlignment": {
+                          "type": "string",
+                          "value": "center"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "entity": "word",
+                    "id": "word:default",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "widthMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "heightMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          }
+                        }
+                      },
+                      {
+                        "component": "text",
+                        "props": {
+                          "effectsInheritBaseAlpha": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "caseTransform": {
+                            "type": "string",
+                            "value": "lowercase"
+                          },
+                          "letterSpacing": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        },
+                        "effects": [
+                          {
+                            "effect": "shadow",
+                            "id": "shadow-0d372da00a3932dc:word:default",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "base"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "blurRadius": {
+                                "type": "number",
+                                "value": 10
+                              },
+                              "offset": {
+                                "type": "vector2",
+                                "value": {
+                                  "x": 0,
+                                  "y": 0
+                                }
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "solid",
+                                  "color": "#000000"
+                                }
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 1
+                              }
+                            }
+                          },
+                          {
+                            "effect": "shadow",
+                            "id": "shadow-631eff81049470a8:word:default",
+                            "props": {
+                              "appliesOn": {
+                                "type": "string",
+                                "value": "base"
+                              },
+                              "enabled": {
+                                "type": "boolean",
+                                "value": true
+                              },
+                              "blurRadius": {
+                                "type": "number",
+                                "value": 8
+                              },
+                              "offset": {
+                                "type": "vector2",
+                                "value": {
+                                  "x": 0,
+                                  "y": 0
+                                }
+                              },
+                              "useFontColor": {
+                                "type": "boolean",
+                                "value": false
+                              },
+                              "color": {
+                                "type": "paint",
+                                "value": {
+                                  "type": "solid",
+                                  "color": "#000000"
+                                }
+                              },
+                              "opacity": {
+                                "type": "number",
+                                "value": 0.75
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "component": "font",
+                        "props": {
+                          "family": {
+                            "type": "fontFamily",
+                            "value": [
+                              "Inter",
+                              "Helvetica",
+                              "Arimo",
+                              "sans-serif"
+                            ]
+                          },
+                          "size": {
+                            "type": "number",
+                            "value": 48
+                          },
+                          "weight": {
+                            "type": "fontWeight",
+                            "value": 700
+                          }
+                        },
+                        "dependencyOf": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:past",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:future",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:previous",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:current",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:next",
+                    "styleSource": "default"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

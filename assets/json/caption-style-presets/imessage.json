@@ -1,0 +1,783 @@
+{
+  "id": "imessage",
+  "name": "iMessage",
+  "schemaVersion": 1,
+  "captionLayout": {
+    "textDirection": "auto",
+    "rowsPerPage": {
+      "mode": "fixed",
+      "count": 2
+    },
+    "wordsPerRow": {
+      "mode": "fixed",
+      "count": 5
+    },
+    "flowParticipation": {
+      "collapseMode": "reserve",
+      "rows": {
+        "default": "include",
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      },
+      "words": {
+        "past": "include",
+        "previous": "include",
+        "current": "include",
+        "next": "include",
+        "future": "include"
+      }
+    },
+    "horizontalFit": "natural",
+    "horizontalFitMinScale": 0.5,
+    "horizontalFitMaxScale": 1.25,
+    "breaking": {
+      "smartBreaks": "auto",
+      "rowBreakPauseThresholdSeconds": 0.3,
+      "pageBreakPauseThresholdSeconds": 2.5,
+      "pauseSpacing": {
+        "enabled": false,
+        "thresholdSeconds": 0.8,
+        "extraSpacing": 32,
+        "maxExtraSpacing": 64
+      },
+      "longWordThresholdMode": "automatic",
+      "longWordThresholdSeconds": 0.75,
+      "breakPriorities": {
+        "rows": [
+          {
+            "id": "source",
+            "mode": "always"
+          },
+          {
+            "id": "punctuation",
+            "mode": "prefer"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "word-count",
+            "mode": "required"
+          },
+          {
+            "id": "width",
+            "mode": "required"
+          },
+          {
+            "id": "long-word",
+            "mode": "required"
+          }
+        ],
+        "pages": [
+          {
+            "id": "source",
+            "mode": "off"
+          },
+          {
+            "id": "punctuation",
+            "mode": "off"
+          },
+          {
+            "id": "pause",
+            "mode": "always"
+          },
+          {
+            "id": "row-count",
+            "mode": "required"
+          },
+          {
+            "id": "height",
+            "mode": "required"
+          }
+        ]
+      },
+      "wordWrapping": {
+        "mode": "wrap",
+        "breakCharacters": [
+          "-"
+        ],
+        "breakMarker": "-",
+        "overflowTolerance": 8
+      },
+      "sentenceEndings": [
+        ".",
+        "!",
+        "?",
+        "।",
+        "॥",
+        "。",
+        "！",
+        "？"
+      ],
+      "strongPunctuation": [
+        ";",
+        ":",
+        "…",
+        "；",
+        "：",
+        "……"
+      ],
+      "additionalCharacters": [],
+      "sourceLineBreaks": "preserve"
+    }
+  },
+  "stateWindow": {
+    "previousWords": {
+      "mode": "all"
+    },
+    "currentWords": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextWords": {
+      "mode": "all"
+    },
+    "previousRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "currentRows": {
+      "mode": "fixedCount",
+      "count": 1
+    },
+    "nextRows": {
+      "mode": "fixedCount",
+      "count": 1
+    }
+  },
+  "timing": {
+    "captionHoldThresholdSeconds": 1
+  },
+  "metadata": {
+    "badges": [
+      "music videos",
+      "sms",
+      "convo",
+      "original"
+    ],
+    "platform": "Apple",
+    "previewBackgroundId": "image-beach-time",
+    "previewStoryId": "late-night-chat"
+  },
+  "preview": {
+    "aspectRatio": "9:16",
+    "properties": {
+      "background": {
+        "type": "paint",
+        "value": {
+          "type": "solid",
+          "color": "rgb(250 249 186)"
+        }
+      }
+    }
+  },
+  "design": {
+    "entity": "viewport",
+    "id": "viewport",
+    "children": [
+      {
+        "entity": "videoArea",
+        "id": "videoArea",
+        "components": [
+          {
+            "component": "layout",
+            "props": {
+              "layoutMode": {
+                "type": "string",
+                "value": "overlay"
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 0
+                },
+                "right": {
+                  "type": "number",
+                  "value": 0
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 0
+                },
+                "left": {
+                  "type": "number",
+                  "value": 0
+                },
+                "linkedTopBottom": {
+                  "type": "boolean",
+                  "value": true
+                },
+                "linkedLeftRight": {
+                  "type": "boolean",
+                  "value": true
+                }
+              },
+              "clipContent": {
+                "type": "boolean",
+                "value": true
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "video",
+            "id": "video"
+          }
+        ]
+      },
+      {
+        "entity": "compositionArea",
+        "id": "compositionArea",
+        "components": [
+          {
+            "component": "transform",
+            "props": {
+              "widthMode": {
+                "type": "string",
+                "value": "fitParent"
+              },
+              "heightMode": {
+                "type": "string",
+                "value": "fitParent"
+              }
+            }
+          },
+          {
+            "component": "layout",
+            "props": {
+              "childrenAlignment": {
+                "horizontalAlignment": {
+                  "type": "string",
+                  "value": "center"
+                },
+                "verticalAlignment": {
+                  "type": "string",
+                  "value": "bottom"
+                },
+                "horizontalSingleItemAlignment": {
+                  "type": "string",
+                  "value": "start"
+                }
+              },
+              "padding": {
+                "top": {
+                  "type": "number",
+                  "value": 20
+                },
+                "right": {
+                  "type": "number",
+                  "value": 60
+                },
+                "bottom": {
+                  "type": "number",
+                  "value": 20
+                },
+                "left": {
+                  "type": "number",
+                  "value": 60
+                },
+                "linkedTopBottom": {
+                  "type": "boolean",
+                  "value": true
+                },
+                "linkedLeftRight": {
+                  "type": "boolean",
+                  "value": true
+                }
+              },
+              "childWindow": {
+                "windowMode": {
+                  "type": "string",
+                  "value": "all"
+                },
+                "windowCount": {
+                  "type": "number",
+                  "value": 1
+                },
+                "windowAxis": {
+                  "type": "string",
+                  "value": "vertical"
+                },
+                "windowAnchor": {
+                  "type": "string",
+                  "value": "start"
+                },
+                "windowSelection": {
+                  "type": "string",
+                  "value": "anchor"
+                }
+              }
+            }
+          }
+        ],
+        "children": [
+          {
+            "entity": "page",
+            "id": "page",
+            "components": [
+              {
+                "component": "transform",
+                "props": {
+                  "position": {
+                    "type": "vector2",
+                    "value": {
+                      "x": 0,
+                      "y": -180
+                    }
+                  },
+                  "widthMode": {
+                    "type": "string",
+                    "value": "fitContent"
+                  },
+                  "heightMode": {
+                    "type": "string",
+                    "value": "fitContent"
+                  },
+                  "pivot": {
+                    "type": "string",
+                    "value": "bottomRight"
+                  }
+                }
+              },
+              {
+                "component": "layout",
+                "props": {
+                  "childrenAlignment": {
+                    "horizontalAlignment": {
+                      "type": "string",
+                      "value": "start"
+                    },
+                    "verticalAlignment": {
+                      "type": "string",
+                      "value": "bottom"
+                    },
+                    "horizontalSingleItemAlignment": {
+                      "type": "string",
+                      "value": "start"
+                    }
+                  },
+                  "padding": {
+                    "top": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "left": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "linkedTopBottom": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "linkedLeftRight": {
+                      "type": "boolean",
+                      "value": true
+                    }
+                  },
+                  "childWindow": {
+                    "windowMode": {
+                      "type": "string",
+                      "value": "all"
+                    },
+                    "windowCount": {
+                      "type": "number",
+                      "value": 1
+                    },
+                    "windowAxis": {
+                      "type": "string",
+                      "value": "vertical"
+                    },
+                    "windowAnchor": {
+                      "type": "string",
+                      "value": "start"
+                    },
+                    "windowSelection": {
+                      "type": "string",
+                      "value": "anchor"
+                    }
+                  }
+                }
+              },
+              {
+                "component": "backgroundStyle",
+                "props": {
+                  "fill": {
+                    "type": "paint",
+                    "value": {
+                      "type": "solid",
+                      "color": "#0183f7"
+                    }
+                  },
+                  "fillPattern": {
+                    "type": "pattern",
+                    "pattern": "single",
+                    "colors": [],
+                    "offset": 0
+                  },
+                  "pathShape": {
+                    "type": "string",
+                    "value": "iMessage"
+                  },
+                  "tailSide": {
+                    "type": "string",
+                    "value": "right"
+                  },
+                  "bandPadding": {
+                    "top": {
+                      "type": "number",
+                      "value": 24
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": 48
+                    },
+                    "bottom": {
+                      "type": "number",
+                      "value": 24
+                    },
+                    "left": {
+                      "type": "number",
+                      "value": 40
+                    },
+                    "linkedTopBottom": {
+                      "type": "boolean",
+                      "value": false
+                    },
+                    "linkedLeftRight": {
+                      "type": "boolean",
+                      "value": false
+                    }
+                  },
+                  "blockPadding": {
+                    "top": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "left": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "linkedTopBottom": {
+                      "type": "boolean",
+                      "value": true
+                    },
+                    "linkedLeftRight": {
+                      "type": "boolean",
+                      "value": true
+                    }
+                  },
+                  "borderRadiusMode": {
+                    "type": "string",
+                    "value": "uniform"
+                  }
+                }
+              },
+              {
+                "component": "animation",
+                "enabled": true,
+                "name": "Animation",
+                "phase": "enter",
+                "scope": "self",
+                "durationSeconds": 0.5,
+                "delaySeconds": 0,
+                "playbackMode": "once",
+                "triggerBehavior": "adaptive",
+                "lifecycleScheduling": "overlap",
+                "sequencer": {
+                  "pattern": "simultaneous",
+                  "interval": 0,
+                  "reverse": false,
+                  "seed": 0
+                },
+                "tracks": [
+                  {
+                    "enabled": true,
+                    "target": "Transform.scale",
+                    "keyframes": [
+                      {
+                        "time": 0,
+                        "value": {
+                          "x": 0.5,
+                          "y": 0.5
+                        },
+                        "curve": "elastic"
+                      },
+                      {
+                        "time": 0.5,
+                        "value": {
+                          "x": 1,
+                          "y": 1
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "enabled": true,
+                    "target": "Transform.opacity",
+                    "keyframes": [
+                      {
+                        "time": 0,
+                        "value": 0,
+                        "curve": "easeOut"
+                      },
+                      {
+                        "time": 0.175,
+                        "value": 1
+                      }
+                    ]
+                  }
+                ],
+                "preset": "spring",
+                "parameters": {
+                  "duration": 0.5,
+                  "strength": 0.5
+                }
+              },
+              {
+                "component": "verticalSpacer",
+                "props": {
+                  "spacing": {
+                    "type": "number",
+                    "value": 8
+                  }
+                }
+              }
+            ],
+            "children": [
+              {
+                "entity": "row",
+                "id": "row:default",
+                "components": [
+                  {
+                    "component": "transform",
+                    "props": {
+                      "position": {
+                        "type": "vector2",
+                        "value": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "transition": {
+                          "enabled": false,
+                          "type": "tween",
+                          "durationSeconds": 0.125,
+                          "easeType": "ease",
+                          "scope": "state",
+                          "startValue": "previousDisplayed",
+                          "initialBehavior": "immediate"
+                        }
+                      },
+                      "widthMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      },
+                      "heightMode": {
+                        "type": "string",
+                        "value": "fitChildren"
+                      }
+                    }
+                  },
+                  {
+                    "component": "layout",
+                    "props": {
+                      "childrenAlignment": {
+                        "horizontalAlignment": {
+                          "type": "string",
+                          "value": "start"
+                        },
+                        "verticalAlignment": {
+                          "type": "string",
+                          "value": "center"
+                        },
+                        "horizontalSingleItemAlignment": {
+                          "type": "string",
+                          "value": "start"
+                        },
+                        "verticalSingleItemAlignment": {
+                          "type": "string",
+                          "value": "start"
+                        }
+                      },
+                      "padding": {
+                        "top": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "right": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "bottom": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "left": {
+                          "type": "number",
+                          "value": 0
+                        },
+                        "linkedTopBottom": {
+                          "type": "boolean",
+                          "value": true
+                        },
+                        "linkedLeftRight": {
+                          "type": "boolean",
+                          "value": true
+                        }
+                      },
+                      "childWindow": {
+                        "windowMode": {
+                          "type": "string",
+                          "value": "all"
+                        },
+                        "windowCount": {
+                          "type": "number",
+                          "value": 1
+                        },
+                        "windowAxis": {
+                          "type": "string",
+                          "value": "horizontal"
+                        },
+                        "windowAnchor": {
+                          "type": "string",
+                          "value": "start"
+                        },
+                        "windowSelection": {
+                          "type": "string",
+                          "value": "anchor"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "entity": "word",
+                    "id": "word:default",
+                    "components": [
+                      {
+                        "component": "transform",
+                        "props": {
+                          "widthMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          },
+                          "heightMode": {
+                            "type": "string",
+                            "value": "fitContent"
+                          }
+                        }
+                      },
+                      {
+                        "component": "text",
+                        "props": {
+                          "effectsInheritBaseAlpha": {
+                            "type": "boolean",
+                            "value": true
+                          },
+                          "letterSpacing": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "component": "font",
+                        "props": {
+                          "family": {
+                            "type": "fontFamily",
+                            "value": [
+                              "Helvetica Neue",
+                              "Helvetica",
+                              "sans-serif",
+                              "Arimo"
+                            ]
+                          },
+                          "size": {
+                            "type": "number",
+                            "value": 32
+                          }
+                        },
+                        "dependencyOf": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:past",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:future",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:previous",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:current",
+                    "styleSource": "default"
+                  },
+                  {
+                    "entity": "word",
+                    "id": "word:next",
+                    "styleSource": "default"
+                  }
+                ]
+              },
+              {
+                "entity": "row",
+                "id": "row:future",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:next",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:past",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:previous",
+                "styleSource": "default"
+              },
+              {
+                "entity": "row",
+                "id": "row:current",
+                "styleSource": "default"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

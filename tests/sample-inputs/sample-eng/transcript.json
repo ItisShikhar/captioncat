@@ -1,0 +1,404 @@
+[
+  {
+    "text": "I think, um, documentaries, docuseries. Um, I love, uh, long-form content on serial killers. I know that's, um, uh, quite a niche topic, and that's because I'm, uh, very easily stimulated by, this may sound weird, but, um, serial killers",
+    "start": 0,
+    "end": 0,
+    "words": [
+      {
+        "text": "I",
+        "start": 0.119,
+        "end": 0.239
+      },
+      {
+        "text": " ",
+        "start": 0.239,
+        "end": 0.299
+      },
+      {
+        "text": "think,",
+        "start": 0.299,
+        "end": 0.659
+      },
+      {
+        "text": " ",
+        "start": 0.659,
+        "end": 0.819
+      },
+      {
+        "text": "um,",
+        "start": 0.819,
+        "end": 1.1
+      },
+      {
+        "text": " ",
+        "start": 1.1,
+        "end": 1.1
+      },
+      {
+        "text": "documentaries,",
+        "start": 2.659,
+        "end": 3.439
+      },
+      {
+        "text": " ",
+        "start": 3.439,
+        "end": 3.779
+      },
+      {
+        "text": "docuseries.",
+        "start": 3.779,
+        "end": 4.779
+      },
+      {
+        "text": " ",
+        "start": 4.779,
+        "end": 4.899
+      },
+      {
+        "text": "Um,",
+        "start": 4.9,
+        "end": 5.099
+      },
+      {
+        "text": " ",
+        "start": 5.099,
+        "end": 5.459
+      },
+      {
+        "text": "I",
+        "start": 5.46,
+        "end": 5.579
+      },
+      {
+        "text": " ",
+        "start": 5.579,
+        "end": 5.739
+      },
+      {
+        "text": "love,",
+        "start": 5.739,
+        "end": 6.179
+      },
+      {
+        "text": " ",
+        "start": 6.179,
+        "end": 6.259
+      },
+      {
+        "text": "uh,",
+        "start": 6.259,
+        "end": 6.539
+      },
+      {
+        "text": " ",
+        "start": 6.539,
+        "end": 6.539
+      },
+      {
+        "text": "long-form",
+        "start": 7.559,
+        "end": 8.039
+      },
+      {
+        "text": " ",
+        "start": 8.039,
+        "end": 8.139
+      },
+      {
+        "text": "content",
+        "start": 8.139,
+        "end": 8.619
+      },
+      {
+        "text": " ",
+        "start": 8.619,
+        "end": 8.699
+      },
+      {
+        "text": "on",
+        "start": 8.699,
+        "end": 8.84
+      },
+      {
+        "text": " ",
+        "start": 8.84,
+        "end": 8.96
+      },
+      {
+        "text": "serial",
+        "start": 8.96,
+        "end": 9.179
+      },
+      {
+        "text": " ",
+        "start": 9.179,
+        "end": 9.259
+      },
+      {
+        "text": "killers.",
+        "start": 9.26,
+        "end": 9.519
+      },
+      {
+        "text": " ",
+        "start": 9.519,
+        "end": 9.599
+      },
+      {
+        "text": "I",
+        "start": 9.599,
+        "end": 9.639
+      },
+      {
+        "text": " ",
+        "start": 9.639,
+        "end": 9.679
+      },
+      {
+        "text": "know",
+        "start": 9.679,
+        "end": 9.779
+      },
+      {
+        "text": " ",
+        "start": 9.779,
+        "end": 9.819
+      },
+      {
+        "text": "that's,",
+        "start": 9.819,
+        "end": 10.099
+      },
+      {
+        "text": " ",
+        "start": 10.099,
+        "end": 10.179
+      },
+      {
+        "text": "um,",
+        "start": 10.179,
+        "end": 10.559
+      },
+      {
+        "text": " ",
+        "start": 10.559,
+        "end": 10.979
+      },
+      {
+        "text": "uh,",
+        "start": 10.979,
+        "end": 11.019
+      },
+      {
+        "text": " ",
+        "start": 11.019,
+        "end": 11.219
+      },
+      {
+        "text": "quite",
+        "start": 11.219,
+        "end": 11.479
+      },
+      {
+        "text": " ",
+        "start": 11.479,
+        "end": 11.539
+      },
+      {
+        "text": "a",
+        "start": 11.539,
+        "end": 11.599
+      },
+      {
+        "text": " ",
+        "start": 11.599,
+        "end": 11.679
+      },
+      {
+        "text": "niche",
+        "start": 11.679,
+        "end": 12.019
+      },
+      {
+        "text": " ",
+        "start": 12.019,
+        "end": 12.319
+      },
+      {
+        "text": "topic,",
+        "start": 12.319,
+        "end": 12.639
+      },
+      {
+        "text": " ",
+        "start": 12.639,
+        "end": 12.759
+      },
+      {
+        "text": "and",
+        "start": 12.759,
+        "end": 12.819
+      },
+      {
+        "text": " ",
+        "start": 12.819,
+        "end": 12.859
+      },
+      {
+        "text": "that's",
+        "start": 12.859,
+        "end": 13.099
+      },
+      {
+        "text": " ",
+        "start": 13.099,
+        "end": 13.159
+      },
+      {
+        "text": "because",
+        "start": 13.159,
+        "end": 13.599
+      },
+      {
+        "text": " ",
+        "start": 13.599,
+        "end": 13.659
+      },
+      {
+        "text": "I'm,",
+        "start": 13.659,
+        "end": 13.919
+      },
+      {
+        "text": " ",
+        "start": 13.919,
+        "end": 14.579
+      },
+      {
+        "text": "uh,",
+        "start": 14.579,
+        "end": 14.699
+      },
+      {
+        "text": " ",
+        "start": 14.699,
+        "end": 14.819
+      },
+      {
+        "text": "very",
+        "start": 14.819,
+        "end": 15.019
+      },
+      {
+        "text": " ",
+        "start": 15.019,
+        "end": 15.159
+      },
+      {
+        "text": "easily",
+        "start": 15.159,
+        "end": 15.839
+      },
+      {
+        "text": " ",
+        "start": 15.839,
+        "end": 15.939
+      },
+      {
+        "text": "stimulated",
+        "start": 15.939,
+        "end": 16.5
+      },
+      {
+        "text": " ",
+        "start": 16.5,
+        "end": 16.639
+      },
+      {
+        "text": "by,",
+        "start": 16.639,
+        "end": 16.979
+      },
+      {
+        "text": " ",
+        "start": 16.979,
+        "end": 17.699
+      },
+      {
+        "text": "this",
+        "start": 17.699,
+        "end": 17.84
+      },
+      {
+        "text": " ",
+        "start": 17.84,
+        "end": 17.899
+      },
+      {
+        "text": "may",
+        "start": 17.899,
+        "end": 18.02
+      },
+      {
+        "text": " ",
+        "start": 18.02,
+        "end": 18.079
+      },
+      {
+        "text": "sound",
+        "start": 18.079,
+        "end": 18.26
+      },
+      {
+        "text": " ",
+        "start": 18.26,
+        "end": 18.34
+      },
+      {
+        "text": "weird,",
+        "start": 18.34,
+        "end": 18.559
+      },
+      {
+        "text": " ",
+        "start": 18.559,
+        "end": 18.699
+      },
+      {
+        "text": "but,",
+        "start": 18.699,
+        "end": 19
+      },
+      {
+        "text": " ",
+        "start": 19,
+        "end": 19.059
+      },
+      {
+        "text": "um,",
+        "start": 19.059,
+        "end": 19.319
+      },
+      {
+        "text": " ",
+        "start": 19.319,
+        "end": 19.319
+      },
+      {
+        "text": "serial",
+        "start": 20.719,
+        "end": 20.999
+      },
+      {
+        "text": " ",
+        "start": 20.999,
+        "end": 21.059
+      },
+      {
+        "text": "killers",
+        "start": 21.059,
+        "end": 21.459
+      }
+    ]
+  }
+]

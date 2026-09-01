@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "rootDir": "./src",
+    "outDir": "./build-browser",
+    "allowJs": false,
+    "checkJs": false,
+    "declaration": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "paths": {
+      "@types": ["./types"],
+      "#platform/canvas.js": ["./src/caption-engine/entity-system/platform/canvas.browser.ts"],
+      "#platform/image-assets.js": ["./src/caption-engine/entity-system/platform/image-assets.browser.ts"],
+      "#platform/cursor-assets.js": ["./src/caption-engine/entity-system/platform/cursor-assets.browser.ts"],
+      "#platform/font-loader.js": ["./src/utilities/platform/font-loader.browser.ts"]
+    }
+  },
+  "include": ["src/caption-engine/browser.ts"]
+}

@@ -1,0 +1,877 @@
+{
+  "fonts": [
+    {
+      "family": "Arimo",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/arimo/arimo-variable.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/arimo/arimo-italic-variable.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/arimo/arimo-variable.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/arimo/arimo-italic-variable.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Bangers",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/bangers/bangers-regular.ttf" },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Bangers" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/bangers/bangers-regular.ttf", "faceWeight": 400 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Bangers" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Cherry Bomb One",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/cherry-bomb-one/cherry-bomb-one-regular.ttf" },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Cherry+Bomb+One" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "DM Serif Text",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/dm-serif-text/dm-serif-text-regular.ttf" },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=DM+Serif+Text" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/dm-serif-text/dm-serif-text-regular.ttf", "faceWeight": 400 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=DM+Serif+Text" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Gaegu",
+      "emoji": {
+        "sizeScale": 0.55,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.05
+      },
+      "variants": [
+        {
+          "weight": 300,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/gaegu/gaegu-light.ttf", "faceWeight": 300 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/gaegu/gaegu-regular.ttf", "faceWeight": 400 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/gaegu/gaegu-bold.ttf", "faceWeight": 700 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Inter",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/inter/inter-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/inter/inter-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/inter/inter-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/inter/inter-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Komika Title - Axis",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/komika-title/komtita.ttf" },
+            {
+              "type": "remote",
+              "url": "https://cdn.jsdelivr.net/gh/axarigato/honkyfirend@1f7717ecf56575c4dfdba6d37f412b8a98ba7254/fonts/KOMTITA_.ttf"
+            },
+            {
+              "type": "remote",
+              "url": "https://raw.githubusercontent.com/axarigato/honkyfirend/1f7717ecf56575c4dfdba6d37f412b8a98ba7254/fonts/KOMTITA_.ttf"
+            },
+            {
+              "type": "remote",
+              "url": "https://cdn.jsdelivr.net/gh/glenn-chen/Tunnel@4411f3e08543911b8bc1ceddbf300d08efc94f7f/Tunnels/Tunnels/KOMTITA_.ttf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Luckiest Guy",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/luckiest-guy/luckiest-guy-regular.ttf" },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Luckiest+Guy" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/luckiest-guy/luckiest-guy-regular.ttf", "faceWeight": 400 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Luckiest+Guy" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Noto Sans",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans/noto-sans-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans/noto-sans-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans/noto-sans-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans/noto-sans-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Noto Sans CJK SC",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/noto-sans-cjk-sc/noto-sans-cjk-sc-regular.ttf" },
+            {
+              "type": "google",
+              "fontFamily": "Noto Sans SC",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900"
+            },
+            {
+              "type": "remote",
+              "url": "https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf"
+            },
+            {
+              "type": "remote",
+              "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Noto Sans Devanagari",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans-devanagari/noto-sans-devanagari-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/noto-sans-devanagari/noto-sans-devanagari-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Oswald",
+      "emoji": {
+        "sizeScale": 0.85,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/oswald/oswald-variable.ttf",
+              "weightRange": { "min": 200, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Oswald:wght@200..700"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/oswald/oswald-variable.ttf",
+              "weightRange": { "min": 200, "max": 700 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Oswald:wght@200..700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Poppins",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/poppins/poppins-regular.ttf" },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/poppins/poppins-bold.ttf" },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Public Sans",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/public-sans/public-sans-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/public-sans/public-sans-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/public-sans/public-sans-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/public-sans/public-sans-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Sour Gummy",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/sour-gummy/sour-gummy-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/sour-gummy/sour-gummy-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/sour-gummy/sour-gummy-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/sour-gummy/sour-gummy-italic-variable.ttf",
+              "weightRange": { "min": 100, "max": 900 }
+            },
+            {
+              "type": "google",
+              "url": "https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Staatliches",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/staatliches/staatliches-regular.ttf" },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Staatliches" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            { "type": "local", "path": "./fonts/staatliches/staatliches-regular.ttf", "faceWeight": 400 },
+            { "type": "google", "url": "https://fonts.googleapis.com/css2?family=Staatliches" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Baskerville",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        {
+          "weight": 400,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/baskervville/baskervville-wght.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "fontFamily": "Baskervville",
+              "url": "https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700"
+            },
+            { "type": "system" }
+          ]
+        },
+        {
+          "weight": 400,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/baskervville/baskervville-italic-wght.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "fontFamily": "Baskervville",
+              "url": "https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700"
+            },
+            { "type": "system" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "normal",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/baskervville/baskervville-wght.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "fontFamily": "Baskervville",
+              "url": "https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700"
+            },
+            { "type": "system" }
+          ]
+        },
+        {
+          "weight": 700,
+          "style": "italic",
+          "sources": [
+            {
+              "type": "local",
+              "path": "./fonts/baskervville/baskervville-italic-wght.ttf",
+              "weightRange": { "min": 400, "max": 700 }
+            },
+            {
+              "type": "google",
+              "fontFamily": "Baskervville",
+              "url": "https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700"
+            },
+            { "type": "system" }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Courier",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Courier New",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Georgia",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Helvetica",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Helvetica Neue",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Times",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    },
+    {
+      "family": "Times New Roman",
+      "emoji": {
+        "sizeScale": 0.8,
+        "alignmentMode": "optical",
+        "baselineOffset": -0.07
+      },
+      "variants": [
+        { "weight": 400, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 400, "style": "italic", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "normal", "sources": [{ "type": "system" }] },
+        { "weight": 700, "style": "italic", "sources": [{ "type": "system" }] }
+      ]
+    }
+  ]
+}

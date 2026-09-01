@@ -1,0 +1,133 @@
+name: captioncat Preset Studio Release
+
+# Builds tools/preset-studio into a single self-contained
+# dist/captioncat-preset-studio-v<version>.html and
+# publishes it as a GitHub Release asset. dist/ is intentionally gitignored
+# (a ~30MB generated artifact) rather than committed, so this workflow is the
+# supported way to get a ready-to-use, no-Node-required copy of the studio -
+# see tools/preset-studio/README.md#getting-the-tool.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      release_ref:
+        description: 'Branch or tag to build; leave empty to use the selected ref'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/preset-studio
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.release_ref || github.ref }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tools/preset-studio/package-lock.json
+
+      - name: Install engine dependencies
+        working-directory: .
+        run: npm ci
+
+      - name: Build engine package
+        working-directory: .
+        run: npm run build
+
+      - name: Resolve captioncat release version
+        id: release
+        working-directory: .
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if [[ "$GITHUB_REF_TYPE" == "tag" && "$GITHUB_REF_NAME" != "v${version}" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match package version v${version}."
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${version}" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] && git ls-remote --exit-code --refs origin "refs/tags/v${version}" >/dev/null 2>&1; then
+            echo "::error title=Version already released::Release v${version} already exists. Bump the version in package.json before starting a new release."
+            exit 1
+          fi
+
+      - name: Install Studio dependencies
+        run: npm ci
+
+      - name: Install Playwright browser (Chromium only)
+        run: npx playwright install --with-deps chromium
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Validate bundled presets round-trip through the schema
+        run: npm run validate:presets
+
+      - name: Verify the real engine renders every bundled preset in a real browser
+        run: npm run verify:browser-engine
+
+      - name: Build the single-file studio
+        run: npm run build
+
+      - name: Verify the versioned Studio HTML works end-to-end over file://
+        run: npm run verify:single-file-build
+
+      - name: Resolve versioned Studio release filename
+        id: studio
+        run: |
+          version="${{ steps.release.outputs.version }}"
+          filename="captioncat-preset-studio-v${version}.html"
+          test -f "dist/${filename}"
+          echo "filename=${filename}" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare GitHub Pages site
+        run: |
+          rm -rf pages-site
+          mkdir -p pages-site/captioncat-preset-studio
+          cp "dist/${{ steps.studio.outputs.filename }}" pages-site/captioncat-preset-studio/index.html
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: tools/preset-studio/pages-site
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release.outputs.tag }}
+          name: 'captioncat Preset Studio (v${{ steps.release.outputs.version }})'
+          body: |
+            Auto-built from commit ${{ github.sha }}.
+
+            Download `${{ steps.studio.outputs.filename }}` below and open it directly in a browser
+            (double-click, drag into a tab, or open from a local checkout). The
+            default build loads registry fonts from Google Fonts or other CDNs
+            when the browser has network access.
+
+            Launch the latest Studio online:
+            https://itisshikhar.github.io/captioncat/captioncat-preset-studio/
+          make_latest: true
+          files: tools/preset-studio/dist/${{ steps.studio.outputs.filename }}
+
+  deploy-pages:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://itisshikhar.github.io/captioncat/captioncat-preset-studio/
+    steps:
+      - name: Deploy the latest Studio to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

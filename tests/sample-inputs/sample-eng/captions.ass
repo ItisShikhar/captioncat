@@ -1,0 +1,52 @@
+[Script Info]
+Title: Caption export
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arimo,48,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,00:00:00.12,00:00:00.24,Default,,0,0,0,,I
+Dialogue: 1,00:00:00.30,00:00:00.66,Default,,0,0,0,,think,
+Dialogue: 2,00:00:00.82,00:00:01.10,Default,,0,0,0,,um,
+Dialogue: 3,00:00:02.66,00:00:03.44,Default,,0,0,0,,documentaries,
+Dialogue: 4,00:00:03.78,00:00:04.78,Default,,0,0,0,,docuseries.
+Dialogue: 5,00:00:04.90,00:00:05.10,Default,,0,0,0,,Um,
+Dialogue: 6,00:00:05.46,00:00:05.58,Default,,0,0,0,,I
+Dialogue: 7,00:00:05.74,00:00:06.18,Default,,0,0,0,,love,
+Dialogue: 8,00:00:06.26,00:00:06.54,Default,,0,0,0,,uh,
+Dialogue: 9,00:00:07.56,00:00:08.04,Default,,0,0,0,,long-form
+Dialogue: 10,00:00:08.14,00:00:08.62,Default,,0,0,0,,content
+Dialogue: 11,00:00:08.70,00:00:08.84,Default,,0,0,0,,on
+Dialogue: 12,00:00:08.96,00:00:09.18,Default,,0,0,0,,serial
+Dialogue: 13,00:00:09.26,00:00:09.52,Default,,0,0,0,,killers.
+Dialogue: 14,00:00:09.60,00:00:09.64,Default,,0,0,0,,I
+Dialogue: 15,00:00:09.68,00:00:09.78,Default,,0,0,0,,know
+Dialogue: 16,00:00:09.82,00:00:10.10,Default,,0,0,0,,that's,
+Dialogue: 17,00:00:10.18,00:00:10.56,Default,,0,0,0,,um,
+Dialogue: 18,00:00:10.98,00:00:11.02,Default,,0,0,0,,uh,
+Dialogue: 19,00:00:11.22,00:00:11.48,Default,,0,0,0,,quite
+Dialogue: 20,00:00:11.54,00:00:11.60,Default,,0,0,0,,a
+Dialogue: 21,00:00:11.68,00:00:12.02,Default,,0,0,0,,niche
+Dialogue: 22,00:00:12.32,00:00:12.64,Default,,0,0,0,,topic,
+Dialogue: 23,00:00:12.76,00:00:12.82,Default,,0,0,0,,and
+Dialogue: 24,00:00:12.86,00:00:13.10,Default,,0,0,0,,that's
+Dialogue: 25,00:00:13.16,00:00:13.60,Default,,0,0,0,,because
+Dialogue: 26,00:00:13.66,00:00:13.92,Default,,0,0,0,,I'm,
+Dialogue: 27,00:00:14.58,00:00:14.70,Default,,0,0,0,,uh,
+Dialogue: 28,00:00:14.82,00:00:15.02,Default,,0,0,0,,very
+Dialogue: 29,00:00:15.16,00:00:15.84,Default,,0,0,0,,easily
+Dialogue: 30,00:00:15.94,00:00:16.50,Default,,0,0,0,,stimulated
+Dialogue: 31,00:00:16.64,00:00:16.98,Default,,0,0,0,,by,
+Dialogue: 32,00:00:17.70,00:00:17.84,Default,,0,0,0,,this
+Dialogue: 33,00:00:17.90,00:00:18.02,Default,,0,0,0,,may
+Dialogue: 34,00:00:18.08,00:00:18.26,Default,,0,0,0,,sound
+Dialogue: 35,00:00:18.34,00:00:18.56,Default,,0,0,0,,weird,
+Dialogue: 36,00:00:18.70,00:00:19.00,Default,,0,0,0,,but,
+Dialogue: 37,00:00:19.06,00:00:19.32,Default,,0,0,0,,um,
+Dialogue: 38,00:00:20.72,00:00:21.00,Default,,0,0,0,,serial
+Dialogue: 39,00:00:21.06,00:00:21.46,Default,,0,0,0,,killers

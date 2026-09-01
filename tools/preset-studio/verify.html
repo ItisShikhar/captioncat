@@ -1,0 +1,22 @@
+<!doctype html>
+<!--
+  Dev-only harness for exercising the browser engine API
+  (`src/engine-adapters/verify-entry.ts`) end-to-end in a real browser.
+
+  Not part of the shipped Preset Studio: Vite's production build only
+  bundles what's reachable from `index.html`, so this file (and the
+  Vite dev server it's served through) never end up in `dist/`.
+
+  Usage: `npm run verify:browser-engine` (starts the Vite dev server, drives
+  this page with Playwright, and renders every bundled preset through the
+  real caption-rendering-engine to confirm the browser API works).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>browser engine verify harness</title>
+  </head>
+  <body>
+    <script type="module" src="/src/engine-adapters/verify-entry.ts"></script>
+  </body>
+</html>
