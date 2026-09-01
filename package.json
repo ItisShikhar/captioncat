@@ -1,7 +1,7 @@
 {
   "name": "@captioncat/caption-engine",
-  "version": "1.0.0",
-  "description": "Reusable caption rendering engine for video, transcript, ASS/SRT, and PNG-sequence workflows.",
+  "version": "1.0.2",
+  "description": "Design and render expressive, animated captions for video and audio with reusable presets. Create, customize, and manage your own caption styles with Preset Studio.",
   "author": "Shikhar Srivastava",
   "license": "MIT",
   "main": "./build/index.js",

@@ -1,5 +1,6 @@
 {
   "name": "@captioncat/preset-studio",
+  "description": "Create, customize, and manage your own caption styles with Preset Studio.",
   "private": true,
   "version": "1.0.0",
   "license": "MIT",
