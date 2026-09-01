@@ -7,12 +7,14 @@ import process from 'node:process';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const gitCommand = 'git';
-const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+const npmCommand = 'npm';
+const npmShell = process.platform === 'win32';
 
 function run(command, args) {
   execFileSync(command, args, {
     cwd: repositoryRoot,
     stdio: 'inherit',
+    shell: command === npmCommand && npmShell,
   });
 }
 
@@ -20,6 +22,7 @@ function capture(command, args) {
   return execFileSync(command, args, {
     cwd: repositoryRoot,
     encoding: 'utf8',
+    shell: command === npmCommand && npmShell,
   }).trim();
 }
 
