@@ -67,6 +67,7 @@
   "scripts": {
     "clean": "rimraf ./build ./build-browser ./src/caption-engine/entity-system/platform/generated",
     "build": "npm run clean && node scripts/generate-browser-svg-manifests.mjs && tsc -p tsconfig.json && tsc -p tsconfig.browser.json && node scripts/copy-image-assets.mjs",
+    "release": "node scripts/release.mjs",
     "gen-promo-frames": "npm run build && node scripts/generate-promo-frames.mjs --config scripts/promo-frame-config.json",
     "gen-preset-thumbs": "npm run build && node scripts/generate-preset-thumbnails.mjs",
     "lint": "biome lint src",

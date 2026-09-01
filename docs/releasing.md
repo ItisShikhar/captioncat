@@ -19,18 +19,32 @@ The Studio package is private and is not published to npm.
 
 ## Create a release
 
-1. Merge the release changes into `main`.
-2. Update the `version` in the root `package.json` and `package-lock.json`.
-   Keep the Studio package version unchanged unless its development metadata
-   also needs an update.
-3. Commit the version change to `main`.
-4. In GitHub Desktop, open **History**, right-click the version commit, and
-   select **Create Tag...**.
-5. Enter `v<version>`, such as `v2.0.0`, then create the tag.
-6. Push the tag to GitHub. GitHub Desktop normally pushes a new tag with its
-   associated commit.
-7. The tag push starts the
-   [`captioncat Preset Studio Release` workflow](../.github/workflows/preset-studio-release.yml).
+Use the release command from a clean, up-to-date `main` branch:
+
+```bash
+npm run release -- 1.0.3
+```
+
+The command performs these actions:
+
+1. Builds the engine.
+2. Runs the linter and the local test.
+3. Updates `package.json` and `package-lock.json`.
+4. Checks the npm package contents.
+5. Commits the version files as `Release v<version>`.
+6. Pushes the commit to `main`.
+7. Creates the matching `v<version>` tag.
+8. Pushes only that tag.
+
+The command does not publish the package to npm. Publish the exact tag after
+the GitHub Actions release checks pass. The command does not force-push or
+overwrite an existing tag.
+
+The command pushes directly to `main`. The account that runs it must bypass
+the pull request rule for `main`, or the command stops at the branch push.
+
+The tag push starts the
+[`captioncat Preset Studio Release` workflow](../.github/workflows/preset-studio-release.yml).
 
 The workflow checks that the tag matches the root package version. It then
 builds and validates the engine, builds the standalone Studio HTML, and creates
