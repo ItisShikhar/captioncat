@@ -13,8 +13,8 @@
 <p><strong>Beautiful, expressive captions - designed, animated, and rendered in code.</strong></p>
 
 <p>
-  <a href="#documentation">Docs</a> |
-  <a href="docs/getting-started.md">Quickstart</a> |
+  <a href="#documentation">Documentation</a> |
+  <a href="docs/getting-started.md">Get Started</a> |
   <a href="docs/preset-studio.md">Preset Studio</a> |
   <a href="docs/presets.md">Presets</a>
 </p>
@@ -29,42 +29,48 @@
 </div>
 
 <p align="center">
-  <img src="docs/images/readme/slide-16-9.webp" alt="captioncat preview banner">
+  <img src="docs/images/readme/banner.webp" alt="captioncat banner">
 </p>
 
 ## What is captioncat?
 
-**captioncat is an open-source engine for designing, animating, and rendering expressive captions for video.**
+**captioncat is an open-source engine for designing, animating, and rendering expressive captions for videos and audios.**
 
-Create reusable caption presets with control over typography, layout, animation, effects, backgrounds, and positioning. Render captions directly onto videos, export standalone caption movies, or export subtitle files.
+Create reusable **style presets** with control over typography, layout, animation, effects, backgrounds, and positioning.
+
+Render captions directly onto videos, export standalone caption movies, or export subtitle files.
+
 Create captions in any language, use an existing transcript or caption file, or
 transcribe directly from video or audio.
 
 ## Why captioncat?
 
-Built for developers who want more than basic subtitles.
+Basic subtitle files store text and timing. They do not describe the visual
+composition of the caption.
 
-- Design expressive captions with typography, layout, animation, effects, and backgrounds.
-- Save styles as reusable presets.
-- Use the same preset across multiple videos.
-- Render captions directly onto videos or export standalone caption movies.
-- Export captions as ASS, SRT, VTT, PNG sequences, or JSON.
-- Create captions in any language, including left-to-right and right-to-left languages.
-- Customize presets with code or with captioncat Preset Studio.
+> Video is becoming the default way we create, consume, and share content.
 
-captioncat gives you programmatic control without limiting you to simple subtitle overlays.
+YouTube Shorts alone now averages **200+ billion daily views**, while more than
+**20 million videos are uploaded to YouTube every day**.
 
-## Features
+Captions are becoming part of the visual language of video. Nearly **half of
+all viewing hours on Netflix in the U.S. happen with subtitles or captions
+enabled**, and research across hundreds of studies shows subtitles have evolved
+beyond accessibility into a mainstream part of media consumption. [^2][^3]
 
-- **Designable captions** - typography, layout, animation, effects, backgrounds, positioning, and more
-- **Multilingual** - LTR, RTL, and automatic text direction
-- **Reusable presets** - bundled presets or custom JSON
-- **Rich animation** - keyframes, transitions, layout motion, and effects
-- **Multiple outputs** - captioned video, standalone caption movies, PNG sequences, ASS,
-  SRT, VTT, and JSON
-- **Font control** - bundled, Google Fonts, remote, and system fonts
-- **Transcription adapters** - OpenAI, ElevenLabs, and Sarvam
-- **captioncat Preset Studio** - visual preset authoring with JSON import and export
+And the way captions are designed matters. Research has found measurable effects
+on **views, engagement, visual attention, comprehension, and viewer comfort**,
+depending on the platform and viewing context. [^1][^4]
+
+**captioncat gives the building blocks to
+design, animate, and render that visual layer programmatically.**
+
+Instead of treating captions as static subtitle files, captioncat treats them
+as **programmable, reusable visual compositions** - with control over
+typography, layout, timing, animation, effects, positioning, and rendering.
+
+These compositions can be **stored as reusable JSON presets**, keeping their
+visual design and behavior separate from the caption content itself.
 
 ## Showcase
 
@@ -85,6 +91,27 @@ See what you can build with **captioncat**.
 See the [full bundled preset gallery](docs/presets.md#preview-gallery).
 
 See the [full showcase](docs/showcase.md), including [live examples](docs/showcase.md#watch-live-examples).
+
+## Features
+
+Built for developers, creators and AI agents who want more than basic subtitles.
+
+> Programmatic control over the entire caption rendering process, from timing and layout to typography, animation, and effects.
+
+- **Designable captions** - typography, layout, animation, effects, backgrounds, positioning, and more
+- **Rich animation** - keyframes, transitions, layout motion, and effects
+- **Reusable presets** - bundled presets or custom JSON
+- **Multilingual** - LTR, RTL, and automatic text direction
+- **AI-ready** - Transcribe directly from video or audio using supported transcription providers like OpenAI, ElevenLabs, and Sarvam.
+- **Multiple outputs** - captioned video, standalone caption movies, PNG sequences, ASS,
+  SRT, VTT, and JSON
+- **Font control** - bundled, Google Fonts, remote, and system fonts
+- **captioncat Preset Studio** - visual preset authoring with JSON import and export
+- **Caption stability** - captioncat implements related stability techniques described in [Google's research][5]:
+  - **Stable frame placement** - The engine keeps the crop and caption placement fixed across frames. This reduces movement during playback and scrubbing. See [Rendering](docs/rendering.md).
+  - **Stable flow layout** - Flow policies can reserve space for collapsed rows or words instead of reflowing later content. See [caption-layout.ts](src/caption-engine/entity-system/caption-layout.ts) and [layout-engine.ts](src/caption-engine/entity-system/layout-engine.ts).
+  - **Caption gap holding** - `captionHoldThresholdSeconds` keeps the previous caption visible across short timing gaps. See [Rendering](docs/rendering.md) and [render-utilities.ts](src/caption-engine/render-utilities.ts).
+  - **Scope** - The engine does not implement the article's token alignment, semantic merging, or flicker metric for live ASR updates.
 
 ## Installation
 
@@ -437,3 +464,17 @@ rendering across [Skia Canvas](https://github.com/samizdatco/skia-canvas) (power
 ## License
 
 captioncat is released under the [MIT License](LICENSE).
+
+## References
+
+[^1]: [Do Captions Help Short Videos Get More Views?](https://ascynd.io/en/blog/do-captions-increase-video-views)
+
+[^2]: [Netflix Study: A new way to experience subtitles](https://about.netflix.com/en/news/introducing-a-new-way-to-experience-subtitles)
+
+[^3]: [Like, Comment & Caption: A Decade of Social Media Video Caption Research (2015–2025). Nguyen, Huong & McDonnell, Emma & May, Lloyd & Druzenko, Alexander & Syeda, Zoobia & Cartwright, Mark & Lee, Sooyeon. (2026). 1-23. 10.1145/3772318.3791868.](https://www.researchgate.net/publication/403756423_Like_Comment_Caption_A_Decade_of_Social_Media_Video_Caption_Research_2015-2025)
+
+[^4]: [Li, G. 2026. Attention Allocation During Viewing of One-Line and Two-Line Subtitles in Vertical Videos. Applied Cognitive Psychology 40, no. 4: e70262.](https://doi.org/10.1002/acp.70262)
+
+[^5]: [Google Research: Modeling and Improving Text Stability in Live Captions](https://research.google/blog/modeling-and-improving-text-stability-in-live-captions/)
+
+[5]: https://research.google/blog/modeling-and-improving-text-stability-in-live-captions/ 'Google Research: Modeling and Improving Text Stability in Live Captions'
