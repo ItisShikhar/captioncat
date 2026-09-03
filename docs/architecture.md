@@ -6,6 +6,36 @@ captioncat uses an Entity Component System (ECS) to describe caption scenes.
 Entities identify scene objects, components store data and capabilities, and
 systems process entities to resolve layout, state, animation, and rendering.
 
+## The problem
+
+Browser Canvas requires a browser runtime. It does not provide a complete media
+processing or video encoding pipeline. Font loading and text measurement can
+also vary across environments.
+
+FFmpeg is excellent for media processing and encoding. Complex captions require
+per-word layout, timing, animations, and effects. These requirements can lead
+to large and difficult-to-maintain filter graphs.
+
+## The solution
+
+captioncat uses each tool for what it does best:
+
+- **Skia Canvas** renders caption frames with precise control over text, layout,
+  shapes, images, animations, and effects.
+- **FFmpeg** handles media processing, compositing, audio, and video encoding.
+
+Skia Canvas runs directly in Node.js without a browser or DOM. This makes it
+well suited for server-side rendering.
+
+## How the engine works
+
+The engine applies a preset to each input and resolves its ECS scene for every
+frame. The processing model below shows how layout, state, animation,
+transitions, and effects produce caption frames.
+
+The [rendering boundaries](#rendering-boundaries) section describes how the
+engine passes those frames to Skia Canvas and FFmpeg for each output type.
+
 ## The processing model
 
 ```text
