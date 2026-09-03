@@ -1,28 +1,32 @@
-<h1>
-  <span style="vertical-align: middle;">
-    <img
-      src="assets/svg/branding/captioncat-logo.svg"
-      height="32"
-      alt=""
-    >
-  </span>
-  captioncat
-</h1>
+<div align="center">
 
-**Beautiful, expressive captions - designed, animated, and rendered in code.**
+<picture>
+  <source srcset="assets/svg/branding/captioncat-logo-lockup.svg"
+          media="(prefers-color-scheme: dark)">
+  <img width="320"
+       src="assets/svg/branding/captioncat-logo-lockup-colored.svg"
+       alt="captioncat logo">
+</picture>
 
-_A caption authoring and design engine for building production-ready video captions._
+<h1>captioncat</h1>
 
-[![npm version](https://img.shields.io/npm/v/@captioncat/caption-engine.svg)](https://www.npmjs.com/package/@captioncat/caption-engine)
-[![npm downloads](https://img.shields.io/npm/dw/@captioncat/caption-engine.svg)](https://www.npmjs.com/package/@captioncat/caption-engine)
-[![GitHub stars](https://img.shields.io/github/stars/ItisShikhar/captioncat.svg)](https://github.com/ItisShikhar/captioncat)
-[![MIT License](https://img.shields.io/github/license/ItisShikhar/captioncat.svg)](LICENSE)
+<p><strong>Beautiful, expressive captions - designed, animated, and rendered in code.</strong></p>
 
-[Getting started](docs/getting-started.md) ·
-[Preset Studio](docs/preset-studio.md) ·
-[Presets](docs/presets.md) ·
-[Showcase](docs/showcase.md) ·
-[Documentation](#documentation)
+<p>
+  <a href="#documentation">Docs</a> |
+  <a href="docs/getting-started.md">Quickstart</a> |
+  <a href="docs/preset-studio.md">Preset Studio</a> |
+  <a href="docs/presets.md">Presets</a>
+</p>
+
+[![npm version](https://img.shields.io/npm/v/@captioncat/caption-engine?style=flat-square)](https://www.npmjs.com/package/@captioncat/caption-engine)
+[![npm downloads](https://img.shields.io/npm/dw/@captioncat/caption-engine?style=flat-square)](https://www.npmjs.com/package/@captioncat/caption-engine)
+[![GitHub stars](https://img.shields.io/github/stars/ItisShikhar/captioncat?style=flat-square)](https://github.com/ItisShikhar/captioncat/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+
+⭐ _Help us reach more developers and grow the captioncat community. Star this repo!_
+
+</div>
 
 <p align="center">
   <img src="docs/images/readme/slide-16-9.webp" alt="captioncat preview banner">
@@ -30,16 +34,25 @@ _A caption authoring and design engine for building production-ready video capti
 
 ## What is captioncat?
 
-**captioncat lets you design expressive, animated captions and render them into videos.**
+**captioncat is an open-source engine for designing, animating, and rendering expressive captions for video.**
 
-Create reusable caption presets with control over typography, layout, animation,
-effects, backgrounds, transitions, positioning, and more. Render captions directly
-onto videos, generate standalone caption movies for your own video compositing,
-or export transcript and caption files. Create and customize presets visually with
-**captioncat Preset Studio**.
-
+Create reusable caption presets with control over typography, layout, animation, effects, backgrounds, and positioning. Render captions directly onto videos, export standalone caption movies, or export subtitle files.
 Create captions in any language, use an existing transcript or caption file, or
 transcribe directly from video or audio.
+
+## Why captioncat?
+
+Built for developers who want more than basic subtitles.
+
+- Design expressive captions with typography, layout, animation, effects, and backgrounds.
+- Save styles as reusable presets.
+- Use the same preset across multiple videos.
+- Render captions directly onto videos or export standalone caption movies.
+- Export captions as ASS, SRT, VTT, PNG sequences, or JSON.
+- Create captions in any language, including left-to-right and right-to-left languages.
+- Customize presets with code or with captioncat Preset Studio.
+
+captioncat gives you programmatic control without limiting you to simple subtitle overlays.
 
 ## Features
 
@@ -331,6 +344,37 @@ Read the [CLI guide](docs/cli.md) for all options and provider environment
 variables.
 
 ## Architecture
+
+### The problem
+
+- Browser Canvas requires a browser runtime and does not provide a complete media processing or video encoding pipeline. Font loading and text measurement can also vary across environments.
+
+- FFmpeg is excellent for media processing and encoding, but complex captions require per-word layout, timing, animations, and effects that can lead to large and difficult-to-maintain filter graphs.
+
+### The solution
+
+**captioncat** uses each tool for what it does best:
+
+- Skia Canvas - renders caption frames with precise control over text, layout, shapes, images, animations, and effects.
+- FFmpeg - handles media processing, compositing, audio, and video encoding.
+
+Skia runs directly in Node.js without a browser or DOM, making it well suited for server-side rendering.
+
+### How does the engine work
+
+#### Rendering pipeline
+
+1. Read a video, audio file, transcript, or caption file.
+2. Apply a preset to determine timing, layout, typography, animation, and effects.
+3. Render caption frames with Skia Canvas.
+4. Composite the frames and process the media with FFmpeg.
+5. Output a captioned video, standalone caption movie, image sequence, or subtitle file.
+
+This separation gives captioncat precise control over complex caption visuals without forcing them into large, difficult-to-maintain FFmpeg filter graphs.
+
+Skia Canvas renders the captions. FFmpeg handles the video.
+
+### Preset
 
 **captioncat** separates transcription, caption layout, animation, and rendering.
 Caption styles use ECS-based presets, so components and effects can be composed
