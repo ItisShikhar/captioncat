@@ -323,8 +323,8 @@ To build Preset Studio locally:
 
 ```bash
 cd tools/preset-studio
-npm install
-npm run build
+pnpm install
+pnpm run build
 ```
 
 Open `tools/preset-studio/dist/captioncat-preset-studio-v<root-engine-version>.html` in a

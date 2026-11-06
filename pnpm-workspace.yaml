@@ -1,0 +1,6 @@
+allowBuilds:
+  '@biomejs/biome': true
+  esbuild: true
+  ffmpeg-static: true
+  ffprobe-static: true
+  skia-canvas: true

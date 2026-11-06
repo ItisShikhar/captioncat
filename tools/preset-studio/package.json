@@ -68,5 +68,6 @@
   },
   "publishConfig": {
     "access": "restricted"
-  }
+  },
+  "packageManager": "pnpm@12.14.0"
 }

@@ -54,11 +54,11 @@ studio.
 > Older versions may work, but are not officially supported.
 
 ```bash
-npm install                    # engine dependencies
-npm run build                  # build the engine package
+pnpm install                   # engine dependencies
+pnpm run build                 # build the engine package
 cd tools/preset-studio
-npm install                    # Studio dependencies
-npm run build                  # build the Studio
+pnpm install                   # Studio dependencies
+pnpm run build                 # build the Studio
 ```
 
 This produces a single HTML file:

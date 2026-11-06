@@ -137,5 +137,6 @@
   "resolutions": {},
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "packageManager": "pnpm@12.14.0"
 }
